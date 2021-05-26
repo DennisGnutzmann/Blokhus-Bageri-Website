@@ -1,0 +1,139 @@
+:root {
+    --font: rgb(214,186,147);
+    --background: rgb(147,96,51);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: url(../images/background.jpg);
+}
+
+header {
+    display: inline-block;
+    background-color: var(--background);
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    border: var(--font);
+    border-width: 10px;
+    border-style: ridge;
+}
+
+#logo {
+    float: left;
+    margin-left: 24px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+#logo-name {
+  color: var(--font);
+  font-size: 32px; 
+  font-weight: bold;
+} 
+
+nav {
+    margin-top: 65px;
+    text-align: center;
+}
+
+nav a {
+    padding: 20px;
+    color: var(--font);
+    font-size: 24px;
+    text-decoration: none;
+    border: 5px;
+    border-color: var(--font);
+    border-style: outset;
+}
+
+.active {
+    border-style: solid; 
+    color: white;
+}
+
+nav a:hover {
+    color: white;
+}
+
+#shoppingcart {
+    float: right;
+    margin-right: 24px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+#cart-name {
+    color: var(--font);
+}
+
+main {
+    max-width: 800px; 
+    margin: 300px auto 100px auto;
+    background-color: white;
+    background-image: url(../images/flour-table.jpg);
+    background-size:cover;
+    padding: 10px 20px 30px;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    color:white;
+    overflow: hidden;
+}
+
+footer h3 {
+    text-align: center;
+}
+
+.footersection {
+    float:left;
+    list-style: none;
+    display: inline;
+    margin: 0 0 40px 15%;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+th {
+    color: var(--font);
+    background-color: var(--background);
+    border-bottom: 5px;
+    border-color: var(--font);
+    border-style: solid;
+    padding: 0px 10px;
+    border-radius: 5px 5px 0 0;
+    line-height: 50px;
+}
+
+td {
+    background-color: var(--font);
+    color: black;
+    padding: 0 10px;
+    line-height: 40px;
+}
+
+td:first-child img:hover {
+    transform: scale(2);
+}
+
+table button {
+    color: var(--font);
+    background-color: var(--background);
+}
