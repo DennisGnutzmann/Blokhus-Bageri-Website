@@ -127,6 +127,7 @@ td {
     color: black;
     padding: 0 10px;
     line-height: 40px;
+    width: 25%;
 }
 
 td:first-child img:hover {
