@@ -8,22 +8,33 @@ function getUrlByName(name,array) {
 
 function generateTable(array,name) {
     let table = document.getElementById(name);
-    //Dynamically create a table based on array size
+    //Dynamically create and fill a table based on array size
     for (var i=1; i<=array.length; i++) {
+        //Create new tr
         let row = table.insertRow(i);
-        row.insertCell(0);
-        row.insertCell(1);
-        row.insertCell(2);
+        
+        //Add and fill td for image
+        let imagecell = row.insertCell(0);
+        let img = document.createElement("IMG");
+        img.src = array[i-1].imageurl;
+        imagecell = img;
+
+        //Add and fill td for name
+        let namecell = row.insertCell(1);
+        namecell.innerHTML = array[i-1].name;
+
+        //Add and fill td for price
+        let pricecell = row.insertCell(2);
+        pricecell.innerHTML = array[i-1].price;
+
+        //Add and fill td for button
         let buttoncell = row.insertCell(3);
-        //Add the button (no functionality yet)
-        buttoncell.innerHTML = '<button type="button">+</button>';
-    }
-    //Fill the table with values from array
-    for (var i=1; i<=array.length; i++) {
-        let row = table.rows[i];
-        row.cells[0].innerHTML = array[i-1].imageurl;
-        row.cells[1].innerHTML = array[i-1].name;
-        row.cells[2].innerHTML = array[i-1].price;
+        if (array[i-1].orderable) {
+           //Add the button (no functionality yet)
+           buttoncell.innerHTML = '<button type="button">+</button>';
+        } else {
+            buttoncell.innerHTML = "Cannot be ordered."
+        }
     }
 }
 
