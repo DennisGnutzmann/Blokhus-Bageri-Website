@@ -30,10 +30,10 @@ function generateTable(array,name) {
         //Add and fill td for button
         let buttoncell = row.insertCell(3);
         if (array[i-1].orderable) {
-           //Add the button (no functionality yet)
-           buttoncell.innerHTML = '<button type="button">+</button>';
+           //Add the button with onclick event
+           buttoncell.innerHTML = '<button type="button" onclick=addProduct("'+array[i-1].name+'",'+array[i-1].price+',1) >+</button>';
         } else {
-            buttoncell.innerHTML = "Cannot be ordered."
+           buttoncell.innerHTML = "Cannot be ordered."
         }
     }
 }
@@ -44,5 +44,37 @@ function generateTables() {
     generateTable(morgenkager,"morgenkager");
     generateTable(eftermiddagskager,"eftermiddagskager");
     generateTable(diverse,"diverse");
+} 
+
+class Product {
+    constructor(name, price, amount) {
+      this.name = name;
+      this.price = price;
+      this.amount = amount;
+      this.totalprice = this.price * this.amount;
+    }
+  }
+
+let cart = [];
+
+function addProduct(name,price,amount) {
+    let product = new Product(name,price,amount);
+    let entry = cart.find(element => element.name == name);
+    if (entry==null) {
+        cart.push(product);
+    } else {
+        entry.amount = entry.amount + amount;
+        entry.totalprice = entry.totalprice + amount*price;
+    } 
+    refreshCart();
 }
 
+function refreshCart() {
+    document.getElementById("cartlist").innerHTML = "";
+    for (var i = 0; i<cart.length;i++) {
+        let li = document.createElement("LI");
+        var text = document.createTextNode(cart[i].name + "   " + cart[i].amount + "   " + cart[i].totalprice);
+        li.appendChild(text);
+        document.getElementById("cartlist").appendChild(li);
+    }
+}

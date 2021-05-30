@@ -138,3 +138,15 @@ table button {
     color: var(--font);
     background-color: var(--background);
 }
+
+#cartwindow {
+    background-color: white;
+    position: fixed;
+    top: 40%;
+    right: 0;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: var(--font);
+    border-width: 10px;
+    border-style: ridge;
+}
