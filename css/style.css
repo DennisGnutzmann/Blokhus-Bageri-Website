@@ -106,7 +106,7 @@ footer h3 {
     margin: 0 0 40px 15%;
 }
 
-table {
+#sortiment table {
     width: 100%;
     text-align: center;
 }
@@ -130,7 +130,7 @@ td {
     width: 25%;
 }
 
-td:first-child img:hover {
+#sortiment td:first-child img:hover {
     transform: scale(2);
 }
 
@@ -139,14 +139,26 @@ table button {
     background-color: var(--background);
 }
 
-#cartwindow {
+#cart {
     background-color: white;
     position: fixed;
     top: 40%;
     right: 0;
-    padding: 10px 20px;
     box-sizing: border-box;
     border: var(--font);
     border-width: 10px;
     border-style: ridge;
+    width: 25%;
+    background-image: url(../images/flour-table.jpg);
+    background-size:cover;
+    text-align: center;
+}
+
+#cart table {
+    width: 100%;
+    margin: auto;
+}
+
+#totalprice {
+    padding: 10px;
 }

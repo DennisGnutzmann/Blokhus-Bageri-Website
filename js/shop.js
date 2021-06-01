@@ -1,11 +1,3 @@
-function getPriceByName(name,array) {
-    return array.find(element => element.name = name).price;
-}
-
-function getUrlByName(name,array) {
-    return array.find(element => element.name = name).imageurl;
-}
-
 function generateTable(array,name) {
     let table = document.getElementById(name);
     //Dynamically create and fill a table based on array size
@@ -57,6 +49,14 @@ class Product {
 
 let cart = [];
 
+function getTotalPrice() {
+    let total = 0;
+    for (var i=0; i<cart.length; i++) {
+        total += cart[i].totalprice;
+    }
+    return total;
+}
+
 function addProduct(name,price,amount) {
     let product = new Product(name,price,amount);
     let entry = cart.find(element => element.name == name);
@@ -69,12 +69,40 @@ function addProduct(name,price,amount) {
     refreshCart();
 }
 
-function refreshCart() {
-    document.getElementById("cartlist").innerHTML = "";
-    for (var i = 0; i<cart.length;i++) {
-        let li = document.createElement("LI");
-        var text = document.createTextNode(cart[i].name + "   " + cart[i].amount + "   " + cart[i].totalprice);
-        li.appendChild(text);
-        document.getElementById("cartlist").appendChild(li);
+function removeProduct(name) {
+    for (var i=0; i<cart.length; i++) {
+        if (cart[i].name === name) {
+             cart.splice(i,1);
+        }
     }
+    refreshCart();
+}
+
+function refreshCart() {
+    let table = document.getElementById("carttable");
+    table.innerHTML = "<tr><th>Name</th><th>Price</th><th>Amount</th></tr>";
+    for (var i=1; i<=cart.length; i++) {
+        //Create new tr
+        let row = table.insertRow(i);
+
+        //Add and fill td for name
+        let namecell = row.insertCell(0);
+        namecell.innerHTML = cart[i-1].name;
+
+        //Add and fill td for price
+        let pricecell = row.insertCell(1);
+        pricecell.innerHTML = cart[i-1].price;
+
+        //Add and fill td for price
+        let amountcell = row.insertCell(2);
+        amountcell.innerHTML = cart[i-1].amount + '<button type="button" onclick=removeProduct("'+namecell.innerHTML+'") >Remove</button>';
+    }
+    let totalprice = document.getElementById("totalprice");
+    totalprice.innerHTML = 'Total: ' + getTotalPrice();
+}
+
+function testCheckOut() {
+    cart = [];
+    refreshCart();
+    alert("Thank you for your purchase!");
 }

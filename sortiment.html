@@ -30,7 +30,7 @@
             </nav>
         </header>
         <main>         
-            <section>
+            <section id="sortiment">
                 <h2>Our Sortiment</h2>
                 <h3>Rundstykker/Boller</h3>
                 <table id="rundstykke">
@@ -74,7 +74,18 @@
                 </table>
             </section>
         </main>
-        <div id="cartwindow"><h2>Shopping Cart</h2><ul id="cartlist"></ul></div>
+        <div id="cart">
+            <h2>Shopping Cart</h2>
+            <table id="carttable">
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                </tr>
+            </table>
+            <div id="totalprice">Total: </div>
+            <button type="button" onclick=testCheckOut()>Buy!</button>
+        </div>
         <footer id=footer>
             <ul>
                 <li class=footersection>
