@@ -1,3 +1,5 @@
+let cart = [];
+
 function generateTable(array,name) {
     let table = document.getElementById(name);
     //Dynamically create and fill a table based on array size
@@ -17,7 +19,7 @@ function generateTable(array,name) {
 
         //Add and fill td for price
         let pricecell = row.insertCell(2);
-        pricecell.innerHTML = array[i-1].price;
+        pricecell.innerHTML = array[i-1].price + ' DKK';
 
         //Add and fill td for button
         let buttoncell = row.insertCell(3);
@@ -47,12 +49,18 @@ class Product {
     }
   }
 
-let cart = [];
-
 function getTotalPrice() {
     let total = 0;
     for (var i=0; i<cart.length; i++) {
         total += cart[i].totalprice;
+    }
+    return total;
+}
+
+function getTotalItems() {
+    let total = 0;
+    for (var i=0; i<cart.length; i++) {
+        total += cart[i].amount;
     }
     return total;
 }
@@ -91,14 +99,17 @@ function refreshCart() {
 
         //Add and fill td for price
         let pricecell = row.insertCell(1);
-        pricecell.innerHTML = cart[i-1].price;
+        pricecell.innerHTML = cart[i-1].price + ' DKK';
 
         //Add and fill td for price
         let amountcell = row.insertCell(2);
         amountcell.innerHTML = cart[i-1].amount + '<button type="button" onclick=removeProduct("'+namecell.innerHTML+'") >Remove</button>';
     }
+    //Recalculate total price
     let totalprice = document.getElementById("totalprice");
-    totalprice.innerHTML = 'Total: ' + getTotalPrice();
+    totalprice.innerHTML = 'Total: ' + getTotalPrice() + ' DKK';
+    //Recalculate total amount of items
+    document.getElementById("cart-name").innerHTML= '('+getTotalItems()+')';
 }
 
 function testCheckOut() {
