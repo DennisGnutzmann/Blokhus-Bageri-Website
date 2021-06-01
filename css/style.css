@@ -162,3 +162,9 @@ table button {
 #totalprice {
     padding: 10px;
 }
+
+.nobuttons table :nth-child(4){
+    display: none;
+
+
+}
