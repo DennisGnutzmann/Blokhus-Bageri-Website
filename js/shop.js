@@ -109,8 +109,12 @@ function refreshCart() {
     let totalprice = document.getElementById("totalprice");
     totalprice.innerHTML = 'Total: ' + getTotalPrice() + ' DKK';
     //Recalculate total amount of items
-    document.getElementById("cart-name").innerHTML= '('+getTotalItems()+')';
+    refreshCartAmount();
     setCookie();
+}
+
+function refreshCartAmount() {
+  document.getElementById("cart-name").innerHTML= 'Your Cart ('+getTotalItems()+')'; 
 }
 
 function testCheckOut() {
@@ -121,42 +125,28 @@ function testCheckOut() {
 
 function init() {
     generateTables();
-    checkCookie();
-    //getCookie();
-    //refreshCart();
+    getCookie();
+    refreshCart();
 }
 
-function setCookie(cname,cvalue,exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+function init2() {
+  getCookie();
+  refreshCartAmount();
 }
-  
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
+
+function init3() {
+  generateTables();
+  getCookie();
+  refreshCartAmount();
 }
-  
-function checkCookie() {
-    var user=getCookie("username");
-    if (user != "") {
-      alert("Welcome again " + user);
-    } else {
-       user = prompt("Please enter your name:","");
-       if (user != "" && user != null) {
-         setCookie("username", user, 30);
-       }
-    }
- }
+
+function setCookie() {
+  document.cookie = JSON.stringify(cart);
+}
+
+function getCookie() {
+  let test = document.cookie;
+  if (test !== null) {
+    cart = JSON.parse(document.cookie);
+  }
+}
