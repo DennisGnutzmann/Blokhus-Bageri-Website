@@ -8,7 +8,7 @@
         <script src="js/database.js"></script>
         <script src="js/shop.js"></script>
     </head>
-    <body onload = "generateTables()">
+    <body onload="init()">
         <header>
             <div id="logo">
                 <a href="index.html"><div id="logo-image">
@@ -29,7 +29,7 @@
                 <a href="sortiment.html">Sortiment</a>
             </nav>
         </header>
-        <main>         
+        <main onload = "generateTables()">         
             <section id="sortiment">
                 <h2>Our Sortiment</h2>
                 <h3>Rundstykker/Boller</h3>
