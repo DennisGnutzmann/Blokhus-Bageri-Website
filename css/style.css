@@ -91,6 +91,19 @@ h3 {
     text-align: center;
 }
 
+main h2 {
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    border: var(--font);
+    border-width: 10px;
+    border-style: ridge;
+    background-color: var(--background);
+    color: var(--font);
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 10px auto;
+}
+
 .contactsWithIcon {
     box-sizing: border-box;
     border: var(--font);
