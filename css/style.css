@@ -53,12 +53,12 @@ nav a {
 
 .active {
     border-style: solid; 
-    color: white;
+    color: rgb(255, 255, 255);
     background-color: rgb(151, 108, 71);
 }
 
 nav a:hover {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 #shoppingcart {
@@ -75,7 +75,7 @@ nav a:hover {
 main {
     max-width: 800px; 
     margin: 300px auto 100px auto;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     background-image: url(../images/flour-table.jpg);
     background-size:cover;
     padding: 10px 20px 30px;
@@ -153,27 +153,31 @@ main h2 {
     background-color: var(--background);
 }
 
-.equalSpacedElements {
-    display: flex;
-    justify-content: space-between;
-}
-
 footer {
     width: 100%;
-    background-color: black;
-    color:white;
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     overflow: hidden;
+    padding: 1% 0;
 }
 
 footer h3 {
     text-align: center;
 }
 
-.footersection {
-    float:left;
-    list-style: none;
-    display: inline;
-    margin: 0 0 40px 15%;
+.equalSpacedElements {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftEmptyBox {
+    float: left;
+    width: 20%;
+}
+
+.rightEmptyBox {
+    float: right;
+    width: 20%;
 }
 
 #sortiment table {
@@ -210,7 +214,7 @@ button {
 }
 
 #cart {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     position: fixed;
     top: 40%;
     right: 0;
