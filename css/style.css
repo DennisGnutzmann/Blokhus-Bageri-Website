@@ -10,24 +10,24 @@ body {
 }
 
 header {
-    display: inline-block;
     background-color: var(--background);
     width: 100%;
     position: fixed;
     top: 0px;
-    padding-bottom: 20px;
     box-sizing: border-box;
     border: var(--font);
     border-width: 10px;
     border-style: ridge;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 0;
 }
 
 #logo {
-    float: left;
-    margin-left: 24px;
-    margin-top: 16px;
     text-align: center;
+    width: 15%;
 }
 
 #logo-name {
@@ -36,12 +36,20 @@ header {
   font-weight: bold;
 } 
 
-nav {
-    margin-top: 65px;
+#shoppingcart {
+    text-align: center;
+    width: 10%;
+}
+
+#cart-name {
+    color: var(--font);
+}
+
+header nav {
     text-align: center;
 }
 
-nav a {
+header nav a {
     padding: 20px;
     color: var(--font);
     font-size: 24px;
@@ -51,25 +59,14 @@ nav a {
     border-style: outset;
 }
 
+header nav a:hover {
+    color: rgb(255, 255, 255);
+}
+
 .active {
     border-style: solid; 
     color: rgb(255, 255, 255);
     background-color: rgb(151, 108, 71);
-}
-
-nav a:hover {
-    color: rgb(255, 255, 255);
-}
-
-#shoppingcart {
-    float: right;
-    margin-right: 24px;
-    margin-top: 16px;
-    text-align: center;
-}
-
-#cart-name {
-    color: var(--font);
 }
 
 main {
