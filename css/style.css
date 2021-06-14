@@ -12,6 +12,7 @@ body {
 header {
     background-color: var(--background);
     width: 100%;
+    height: 20%;
     position: fixed;
     top: 0px;
     box-sizing: border-box;
@@ -71,10 +72,10 @@ header nav a:hover {
 
 main {
     max-width: 800px; 
-    margin: 300px auto 100px auto;
+    margin: 15% auto 5% auto;
     background-color: rgb(255, 255, 255);
     background-image: url(../images/flour-table.jpg);
-    background-size:cover;
+    background-size:contain;
     padding: 10px 20px 30px;
     border-radius: 10px;
 }
@@ -200,10 +201,14 @@ button {
     background-color: var(--background);
 }
 
+button:hover {
+    color: rgb(255, 255, 255);
+}
+
 #cart {
     background-color: rgb(255, 255, 255);
-    position: fixed;
-    top: 40%;
+    position: absolute; 
+    top: 20%;
     right: 0;
     box-sizing: border-box;
     border: var(--font);
@@ -215,13 +220,56 @@ button {
     text-align: center;
 }
 
+#cart h2 {
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    border: var(--font);
+    border-width: 10px;
+    border-style: ridge;
+    background-color: var(--background);
+    color: var(--font);
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 10px auto;
+}
+
 #cart table {
     width: 100%;
     margin: auto;
 }
 
+#cart table th {
+    color: var(--font);
+    background-color: var(--background);
+    border-color: var(--font);
+    border-style: solid;
+    line-height: 50px;
+    width: 30%;
+}
+
+#cart table td {
+    width: 30%;
+    background-color: var(--font);
+    color: rgb(0, 0, 0);
+    line-height: 30px;
+}
+
+#cart table td button {
+    float: right;
+}
+
 #totalprice {
-    padding: 10px;
+    color: var(--font);
+    background-color: var(--background);
+    border-color: var(--font);
+    border-style: solid;
+    line-height: 50px;
+    width: 98%;
+    margin: 0 auto;
+}
+
+#cart button {
+    font-size: large;
 }
 
 .nobuttons table :nth-child(4){
@@ -232,7 +280,6 @@ footer {
     width: 100%;
     background-color: rgb(0, 0, 0);
     color:rgb(255, 255, 255);
-    overflow: hidden;
     padding: 1% 0;
 }
 

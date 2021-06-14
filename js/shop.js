@@ -110,7 +110,7 @@ function refreshCart() {
         amountcell.innerHTML = cart[i-1].amount;
         let button = document.createElement("BUTTON");
         button.type = "button";
-        button.innerHTML = "-";
+        button.innerHTML = "X";
         button.setAttribute("onclick","removeProduct('"+namecell.innerHTML+"')");
         amountcell.appendChild(button);
     }
