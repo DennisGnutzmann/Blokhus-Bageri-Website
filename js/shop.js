@@ -25,7 +25,11 @@ function generateTable(array,name) {
         let buttoncell = row.insertCell(3);
         if (array[i-1].orderable) {
            //Add the button with onclick event
-           buttoncell.innerHTML = '<button type="button" onclick=addProduct("'+array[i-1].name+'",'+array[i-1].price+',1) >+</button>';
+           let button = document.createElement("BUTTON");
+           button.type = "button";
+           button.innerHTML = "+";
+           button.setAttribute("onclick","addProduct('"+array[i-1].name+"',"+array[i-1].price+",1)");
+           buttoncell.appendChild(button);
         } else {
            buttoncell.innerHTML = "Cannot be ordered."
         }
@@ -103,7 +107,12 @@ function refreshCart() {
 
         //Add and fill td for price
         let amountcell = row.insertCell(2);
-        amountcell.innerHTML = cart[i-1].amount + '<button type="button" onclick=removeProduct("'+namecell.innerHTML+'") >Remove</button>';
+        amountcell.innerHTML = cart[i-1].amount;
+        let button = document.createElement("BUTTON");
+        button.type = "button";
+        button.innerHTML = "-";
+        button.setAttribute("onclick","removeProduct('"+namecell.innerHTML+"')");
+        amountcell.appendChild(button);
     }
     //Recalculate total price
     let totalprice = document.getElementById("totalprice");
