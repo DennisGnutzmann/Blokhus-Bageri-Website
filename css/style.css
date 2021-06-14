@@ -192,8 +192,16 @@ main h2 {
     width: 25%;
 }
 
+#sortiment td:first-child img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: inherit;
+    height: auto;
+}
+
 #sortiment td:first-child img:hover {
-    transform: scale(2);
+    transform: scale(10);
 }
 
 button {

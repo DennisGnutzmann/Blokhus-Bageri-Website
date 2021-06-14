@@ -11,7 +11,7 @@ function generateTable(array,name) {
         let imagecell = row.insertCell(0);
         let img = document.createElement("IMG");
         img.src = array[i-1].imageurl;
-        imagecell = img;
+        imagecell.appendChild(img);
 
         //Add and fill td for name
         let namecell = row.insertCell(1);
