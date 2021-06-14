@@ -19,7 +19,7 @@ function generateTable(array,name) {
 
         //Add and fill td for price
         let pricecell = row.insertCell(2);
-        pricecell.innerHTML = array[i-1].price + ' DKK';
+        pricecell.innerHTML = array[i-1].price.toFixed(2) + ' DKK';
 
         //Add and fill td for button
         let buttoncell = row.insertCell(3);
@@ -103,7 +103,7 @@ function refreshCart() {
 
         //Add and fill td for price
         let pricecell = row.insertCell(1);
-        pricecell.innerHTML = cart[i-1].price + ' DKK';
+        pricecell.innerHTML = cart[i-1].price.toFixed(2) + ' DKK';
 
         //Add and fill td for price
         let amountcell = row.insertCell(2);
@@ -116,7 +116,7 @@ function refreshCart() {
     }
     //Recalculate total price
     let totalprice = document.getElementById("total-price");
-    totalprice.innerHTML = 'Total: ' + getTotalPrice() + ' DKK';
+    totalprice.innerHTML = 'Total: ' + getTotalPrice().toFixed(2) + ' DKK';
     //Recalculate total amount of items
     refreshCartAmount();
     setCookie();
