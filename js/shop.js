@@ -115,7 +115,7 @@ function refreshCart() {
         amountcell.appendChild(button);
     }
     //Recalculate total price
-    let totalprice = document.getElementById("totalprice");
+    let totalprice = document.getElementById("total-price");
     totalprice.innerHTML = 'Total: ' + getTotalPrice() + ' DKK';
     //Recalculate total amount of items
     refreshCartAmount();
@@ -132,18 +132,18 @@ function testCheckOut() {
     alert("Thank you for your purchase!");
 }
 
-function init() {
+function initOrders() {
     generateTables();
     getCookie();
     refreshCart();
 }
 
-function init2() {
+function init() {
   getCookie();
   refreshCartAmount();
 }
 
-function init3() {
+function initProducts() {
   generateTables();
   getCookie();
   refreshCartAmount();
