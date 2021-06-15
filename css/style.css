@@ -12,8 +12,7 @@ body {
 header {
     background-color: var(--background);
     width: 100%;
-    height: 20%;
-    position: fixed;
+    height: fit-content;
     top: 0px;
     box-sizing: border-box;
     border: var(--font);
@@ -28,7 +27,7 @@ header {
 
 #logo {
     text-align: center;
-    width: 15%;
+    width: 150px;
 }
 
 #logo-name {
@@ -39,7 +38,7 @@ header {
 
 #shoppingcart {
     text-align: center;
-    width: 10%;
+    width: 150px;
 }
 
 #cart-name {
@@ -71,12 +70,13 @@ header nav a:hover {
 }
 
 main {
-    max-width: 800px; 
-    margin: 15% auto 5% auto;
+    width: 50%; 
+    margin: 5% auto;
     background-color: rgb(255, 255, 255);
     background-image: url(../images/flour-table.jpg);
-    background-size:contain;
-    padding: 10px 20px 30px;
+    background-size: 100% 534px;
+    background-repeat: repeat-y;
+    padding: 10px 20px 10px 20px;
     border-radius: 10px;
 }
 
@@ -90,7 +90,6 @@ h3 {
 }
 
 main h2 {
-    padding-bottom: 20px;
     box-sizing: border-box;
     border: var(--font);
     border-width: 10px;
@@ -140,15 +139,6 @@ main h2 {
 .fb-container {
     width: 100%;
     text-align: center;
-}
-
-.fb-page {
-    box-sizing: border-box;
-    border: var(--font);
-    border-width: 5px;
-    border-radius: 10px;
-    border-style: solid;
-    background-color: var(--background);
 }
 
 #order-note {
@@ -216,7 +206,7 @@ button:hover {
 #cart {
     background-color: rgb(255, 255, 255);
     position: absolute; 
-    top: 20%;
+    top: 0;
     right: 0;
     box-sizing: border-box;
     border: var(--font);
@@ -224,8 +214,10 @@ button:hover {
     border-style: ridge;
     width: 25%;
     background-image: url(../images/flour-table.jpg);
-    background-size:cover;
+    background-size: 100% 534px;
+    background-repeat: repeat-y;
     text-align: center;
+    z-index: 10;
 }
 
 #cart h2 {
@@ -272,7 +264,7 @@ button:hover {
     border-color: var(--font);
     border-style: solid;
     line-height: 50px;
-    width: 98%;
+    width: 99%;
     margin: 0 auto;
 }
 
@@ -289,23 +281,56 @@ footer {
     background-color: rgb(0, 0, 0);
     color:rgb(255, 255, 255);
     padding: 1% 0;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 footer h3 {
     text-align: center;
 }
 
-.equal-spaced-elements {
-    display: flex;
-    justify-content: space-between;
+@media screen and (max-width: 1800px) {
+    #cart {
+        width: 54%;
+        position: relative;
+        margin: 5% auto 0 auto;
+        padding: 10px 20px 10px 20px;
+    }
 }
 
-.left-empty-box {
-    float: left;
-    width: 20%;
+@media screen and (max-width: 1000px) {
+    header {
+      flex-direction: column;
+    }
+    header nav a {
+        display: block;
+    }
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    main {
+        width: 80%;
+    }
+    #cart {
+        width: 84%;
+    }
 }
 
-.right-empty-box {
-    float: right;
-    width: 20%;
+@media screen and (max-width: 600px) {
+    main {
+        width: 100%;
+        overflow:hidden;
+        padding: 0;
+    }
+
+    #cart {
+        width: 100%;
+        overflow:hidden;
+        padding: 0;
+    }
+    .contacts-with-icon img {
+        display: none;
+    }
 }
