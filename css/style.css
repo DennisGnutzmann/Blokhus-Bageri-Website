@@ -70,7 +70,7 @@ header nav a:hover {
 }
 
 main {
-    width: 50%; 
+    width: 45%; 
     margin: 5% auto;
     background-color: rgb(255, 255, 255);
     background-image: url(../images/flour-table.jpg);
@@ -291,7 +291,7 @@ footer h3 {
 
 @media screen and (max-width: 1800px) {
     #cart {
-        width: 54%;
+        width: 47%;
         position: relative;
         margin: 5% auto 0 auto;
         padding: 10px 20px 10px 20px;
