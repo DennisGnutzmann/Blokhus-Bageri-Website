@@ -25,6 +25,34 @@ header {
     padding: 1% 0;
 }
 
+header ul {
+    list-style: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a img {
+    padding: 5px;
+    background-color: rgb(151, 108, 71);
+    width: 90px;
+    height: 60px;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+
 #logo {
     text-align: center;
     width: 150px;
@@ -298,7 +326,7 @@ footer h3 {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     header {
       flex-direction: column;
     }
@@ -315,6 +343,13 @@ footer h3 {
     }
     #cart {
         width: 84%;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown:hover .dropdown-content {
+        position: relative;
     }
 }
 
