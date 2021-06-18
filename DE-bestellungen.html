@@ -38,12 +38,13 @@
         </header>
         <div id="cart">
             <h2>Einkaufskorb</h2>
-            <table id="carttable">
-                <tr>
+            <table>
+                <thead>
                     <th>Name</th>
                     <th>Preis</th>
                     <th>Menge</th>
-                </tr>
+                </thead>
+                <tbody id="cart-tbody"></tbody>
             </table>
             <div id="total-price">Gesamt: </div>
             <button type="button" onclick=testCheckOut()>Kaufen!</button>

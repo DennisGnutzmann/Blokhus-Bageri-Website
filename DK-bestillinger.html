@@ -38,12 +38,13 @@
         </header>
         <div id="cart">
             <h2>Indkøbskurv</h2>
-            <table id="carttable">
-                <tr>
+            <table>
+                <thead>
                     <th>Navn</th>
                     <th>Pris</th>
                     <th>Beløb</th>
-                </tr>
+                </thead>
+                <tbody id="cart-tbody"></tbody>
             </table>
             <div id="total-price">Total: </div>
             <button type="button" onclick=testCheckOut()>Køb!</button>
