@@ -25,34 +25,6 @@ header {
     padding: 1% 0;
 }
 
-header ul {
-    list-style: none;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown a img {
-    padding: 5px;
-    background-color: rgb(151, 108, 71);
-    width: 90px;
-    height: 60px;
-}
-
-.dropdown-content {
-    position: absolute;
-    display: none;
-    z-index: 1;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: inline-flex;
-    flex-direction: row;
-}
-
-
 #logo {
     text-align: center;
     width: 150px;
@@ -75,6 +47,7 @@ header ul {
 
 header nav {
     text-align: center;
+    display: flex;
 }
 
 header nav a {
@@ -95,6 +68,37 @@ header nav a:hover {
     border-style: solid; 
     color: rgb(255, 255, 255);
     background-color: rgb(151, 108, 71);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-flex;
+    height: 78px;
+    border: 0;
+}
+
+.dropdown a {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.dropdown a img {
+    padding: 5px;
+    background-color: rgb(151, 108, 71);
+    width: 90px;
+    height: 68px;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: inline-flex;
+    flex-direction: row;
 }
 
 main {
@@ -330,8 +334,8 @@ footer h3 {
     header {
       flex-direction: column;
     }
-    header nav a {
-        display: block;
+    header nav {
+      flex-direction: column;
     }
     footer {
         flex-direction: column;
@@ -348,8 +352,9 @@ footer h3 {
         position: relative;
         display: inline-block;
     }
-    .dropdown:hover .dropdown-content {
+    .dropdown-content {
         position: relative;
+        display: inline-flex;
     }
 }
 
