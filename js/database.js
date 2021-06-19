@@ -1,7 +1,7 @@
 let rundstykke = [
 {"name" : "Spansk",
 "price" : 6.50,
-"imageurl": "",
+"imageurl": "images/products/test.png",
 "orderable": true
 },
 {"name" : "Alm. med sesam",
