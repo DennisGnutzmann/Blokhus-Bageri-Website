@@ -308,7 +308,7 @@ button:hover {
     font-size: large;
 }
 
-.no-buttons table :nth-child(4){
+.no-buttons table tr :nth-child(4){
     display: none;
 }
 
