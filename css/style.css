@@ -223,7 +223,11 @@ main h2 {
 }
 
 #sortiment td:first-child img:hover {
-    transform: scale(10);
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    width: 30%;
+    background-color: white;
 }
 
 button {
