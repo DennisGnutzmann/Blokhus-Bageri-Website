@@ -23,7 +23,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1% 0;
+    padding: 15px 0;
 }
 
 #logo {
@@ -258,7 +258,7 @@ button:hover {
 #cart {
     background-color: rgb(255, 255, 255);
     position: absolute; 
-    top: 0;
+    top: 209px;
     right: 0;
     box-sizing: border-box;
     border: var(--font);
@@ -382,6 +382,7 @@ footer h3 {
 
 @media screen and (max-width: 1800px) {
     #cart {
+        top: 0;
         width: 47%;
         position: relative;
         margin: 5% auto 0 auto;
@@ -413,7 +414,7 @@ footer h3 {
     }
     .dropdown-content {
         position: relative;
-        display: inline-flex;
+        display: inline-block;
     }
 }
 
@@ -431,5 +432,32 @@ footer h3 {
     }
     .contacts-with-icon img {
         display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #sortiment table tr th:nth-of-type(1) {
+        display: none;
+    }
+    #sortiment table tr td:nth-of-type(1) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #cart table tr th:nth-of-type(2) {
+        display: none;
+    }
+    #cart table tr td:nth-of-type(2) {
+        display: none;
+    }
+    #sortiment table tr th:nth-of-type(3) {
+        display: none;
+    }
+    #sortiment table tr td:nth-of-type(3) {
+        display: none;
+    }
+    .dropdown a img{
+        max-width: 60px;
     }
 }
