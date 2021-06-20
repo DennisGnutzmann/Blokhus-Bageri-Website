@@ -1,82 +1,82 @@
 let rundstykke = [
 {"name" : "Spansk",
 "price" : 6.50,
-"imageurl": "images/products/test.png",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Alm. med sesam",
 "price" : 6.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Håndværker",
 "price" : 6.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Skagenslap",
 "price" : 6.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
  },
  {"name" : "Søstjerne",
  "price" : 6.50,
- "imageurl": "",
+ "imageurl": "images/presentation/test.png",
  "orderable": true
 },
 {"name" : "Baguette",
 "price" : 8.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Italiensk",
 "price" : 8.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Grøv italiensk",
 "price" : 8.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Birkes",
 "price" : 8.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Grøv birkes",
 "price" : 8.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Gulerødsboller",
 "price" : 9.00,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Tilbud: 5 Gulerødsboller",
 "price" : 33.00,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Krydde",
 "price" : 6.50,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Teboller",
 "price" : 7.00,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Chokoladeboller",
 "price" : 9.00,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 },
 {"name" : "Rosinboller",
 "price" : 9.00,
-"imageurl": "",
+"imageurl": "images/presentation/test.png",
 "orderable": true
 }
 ]

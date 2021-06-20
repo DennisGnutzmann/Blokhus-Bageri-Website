@@ -1,6 +1,7 @@
 :root {
     --font: rgb(214,186,147);
     --background: rgb(147,96,51);
+    --third: rgb(151, 108, 71);
 }
 
 body {
@@ -28,6 +29,7 @@ header {
 #logo {
     text-align: center;
     width: 150px;
+    padding: 0 10px;
 }
 
 #logo-name {
@@ -39,6 +41,7 @@ header {
 #shoppingcart {
     text-align: center;
     width: 150px;
+    padding: 0 10px;
 }
 
 #cart-name {
@@ -67,7 +70,7 @@ header nav a:hover {
 .active {
     border-style: solid; 
     color: rgb(255, 255, 255);
-    background-color: rgb(151, 108, 71);
+    background-color: var(--third);
 }
 
 .dropdown {
@@ -85,7 +88,7 @@ header nav a:hover {
 
 .dropdown a img {
     padding: 5px;
-    background-color: rgb(151, 108, 71);
+    background-color: var(--third);
     width: 90px;
     height: 68px;
 }
@@ -222,13 +225,25 @@ main h2 {
     height:auto;
 }
 
+/*
+#sortiment td:first-child img:hover {
+    position: fixed;
+    height: auto;
+    top: 20%;
+    left: 35%;
+    right: 35%;
+    width: 30%;
+    background-color: white;
+}
+*/
+
 #sortiment td:first-child img:hover {
     position: absolute;
     height: auto;
     left: 35%;
     right: 35%;
     width: 30%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 button {
@@ -311,6 +326,45 @@ button:hover {
 
 .no-buttons table tr :nth-child(4){
     display: none;
+}
+
+.infoblock-img-left{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.infoblock-img-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}
+
+.infoblock-img-left p {
+    width: 50%;
+    background-color: var(--font);
+    padding: 10px;
+    border: var(--background);
+    border-width: 10px;
+    border-style: dashed;
+}
+
+.infoblock-img-right p {
+    width: 50%;
+    background-color: var(--font);
+    padding: 10px;
+    border: var(--background);
+    border-width: 10px;
+    border-style: dashed;
+}
+
+.infoblock-img-left img {
+    width: 35%;
+}
+
+.infoblock-img-right img {
+    width: 35%;
 }
 
 footer {
