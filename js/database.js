@@ -1,82 +1,82 @@
 let rundstykke = [
 {"name" : "Spansk",
 "price" : 6.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/spansk-rundstykke.jpg",
 "orderable": true
 },
 {"name" : "Alm. med sesam",
 "price" : 6.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/spansk-rundstykke-m-sesam.jpg",
 "orderable": true
 },
 {"name" : "Håndværker",
 "price" : 6.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/handvaerker.jpg",
 "orderable": true
 },
 {"name" : "Skagenslap",
 "price" : 6.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/skagenslap.jpg",
 "orderable": true
  },
  {"name" : "Søstjerne",
  "price" : 6.50,
- "imageurl": "images/presentation/test.png",
+ "imageurl": "images/presentation/handvaerker.jpg",
  "orderable": true
 },
 {"name" : "Baguette",
 "price" : 8.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/muslibolle.jpg",
 "orderable": true
 },
 {"name" : "Italiensk",
 "price" : 8.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/majsstykke.jpg",
 "orderable": true
 },
 {"name" : "Grøv italiensk",
 "price" : 8.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/italiensk-ciabattastykke.jpg",
 "orderable": true
 },
 {"name" : "Birkes",
 "price" : 8.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/birkes.jpg",
 "orderable": true
 },
 {"name" : "Grøv birkes",
 "price" : 8.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/grov-birkes.jpg",
 "orderable": true
 },
 {"name" : "Gulerødsboller",
 "price" : 9.00,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/gulerodsbrud.jpg",
 "orderable": true
 },
 {"name" : "Tilbud: 5 Gulerødsboller",
 "price" : 33.00,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/gulerodsbrud.jpg",
 "orderable": true
 },
 {"name" : "Krydde",
 "price" : 6.50,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/trekornsstykke.jpg",
 "orderable": true
 },
 {"name" : "Teboller",
 "price" : 7.00,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/almindelig-thebolle.jpg",
 "orderable": true
 },
 {"name" : "Chokoladeboller",
 "price" : 9.00,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/chokoladebolle.jpg",
 "orderable": true
 },
 {"name" : "Rosinboller",
 "price" : 9.00,
-"imageurl": "images/presentation/test.png",
+"imageurl": "images/presentation/rosinbolle.jpg",
 "orderable": true
 }
 ]

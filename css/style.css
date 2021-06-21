@@ -238,7 +238,8 @@ main h2 {
 */
 
 #sortiment td:first-child img:hover {
-    position: absolute;
+    top: 10vh;
+    position: fixed;
     height: auto;
     left: 35%;
     right: 35%;
