@@ -7,7 +7,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-image: url(../images/background.jpg);
+    background-image: url(../images/background.png);
 }
 
 header {
@@ -241,9 +241,9 @@ main h2 {
     top: 10vh;
     position: fixed;
     height: auto;
-    left: 35%;
-    right: 35%;
-    width: 30%;
+    left: 30%;
+    right: 30%;
+    width: 40%;
     background-color: rgb(255, 255, 255);
 }
 
