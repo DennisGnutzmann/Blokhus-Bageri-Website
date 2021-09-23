@@ -169,15 +169,15 @@ function refreshCartAmount() {
    }
 }
 
-function initOrders() {
-    generateTables();
-    getCookie();
-    refreshCart();
-}
-
 function init() {
   getCookie();
   refreshCartAmount();
+}
+
+function initOrders() {
+  generateTables();
+  getCookie();
+  refreshCart();
 }
 
 function initProducts() {
