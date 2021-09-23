@@ -169,12 +169,6 @@ function refreshCartAmount() {
    }
 }
 
-function testCheckOut() {
-    cart = [];
-    refreshCart();
-    alert("Thank you for your purchase!");
-}
-
 function initOrders() {
     generateTables();
     getCookie();
@@ -190,6 +184,11 @@ function initProducts() {
   generateTables();
   getCookie();
   refreshCartAmount();
+}
+
+function initCheckout() {
+  getCookie();
+  refreshCart();
 }
 
 function setCookie() {

@@ -8,7 +8,7 @@
         <script src="js/database.js"></script>
         <script src="js/shop.js"></script>
     </head>
-    <body onload="initOrders()">
+    <body onload="initCheckout()">
         <header>
             <div id="logo">
                 <a href="DE-index.html"><div id="logo-image">
@@ -22,10 +22,10 @@
                 <a href="DE-kontakte.html">Kontakte</a>
                 <a href="DE-produkte.html">Produkte</a>
                 <div class="dropdown">
-                    <a href="DE-bestellungen.html"><img src="images/german-flag-medium.png" alt=""></a>
+                    <a href="DE-checkout.html"><img src="images/german-flag-medium.png" alt=""></a>
                     <div class="dropdown-content">
-                        <a href="DK-bestillinger.html"><img src="images/dane-flag-medium.png" alt=""></a>
-                        <a href="EN-orders.html"><img src="images/british-flag-medium.png" alt=""></a>                      
+                        <a href="DK-checkout.html"><img src="images/dane-flag-medium.png" alt=""></a>
+                        <a href="EN-checkout.html"><img src="images/british-flag-medium.png" alt=""></a>                      
                     </div>
                 </div>
             </nav>
@@ -47,53 +47,10 @@
                 <tbody id="cart-tbody"></tbody>
             </table>
             <div id="total-price">Gesamt: </div>
-            <button type="button"><a href="DE-checkout.html">Weiter zum Checkout!</a></button>
+            <button type="button" onclick=testCheckOut()>Kaufen!</button>
         </div>
-        <main onload= "generateTables()">
-            <section id="sortiment">
-                <h2>Unsere Produkte</h2>
-                <span id="order-note">Hinweis: Geburtstagskuchen und andere Kuchen in größeren Mengen können per Telefon bestellt werden.</span>
-                <h3>Brötchen</h3>
-                <table id="rundstykke">
-                    <tr><th>Bild</th>
-                        <th>Name</th>
-                        <th>Preis</th>
-                        <th>In den Korb</th>
-                    </tr>
-                </table>
-                <h3>Brot</h3>
-                <table id="broed">
-                    <tr><th>Bild</th>
-                        <th>Name</th>
-                        <th>Preis</th>
-                        <th>In den Korb</th>
-                    </tr>
-                </table>
-                <h3>Kopenhagenergebäck</h3>
-                <table id="morgenkager">
-                    <tr><th>Bild</th>
-                        <th>Name</th>
-                        <th>Preis</th>
-                        <th>In den Korb</th>
-                    </tr>
-                </table>
-                <h3>Kuchen</h3>
-                <table id="eftermiddagskager">
-                    <tr><th>Bild</th>
-                        <th>Name</th>
-                        <th>Preis</th>
-                        <th>In den Korb</th>
-                    </tr>
-                </table>
-                <h3>Sonstiges</h3>
-                <table id="diverse">
-                    <tr><th>Bild</th>
-                        <th>Name</th>
-                        <th>Preis</th>
-                        <th>In den Korb</th>
-                    </tr>
-                </table>
-            </section>
+        <main>
+            
         </main>
         <footer>
             <div>

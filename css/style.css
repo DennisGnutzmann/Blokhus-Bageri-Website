@@ -225,18 +225,6 @@ main h2 {
     height:auto;
 }
 
-/*
-#sortiment td:first-child img:hover {
-    position: fixed;
-    height: auto;
-    top: 20%;
-    left: 35%;
-    right: 35%;
-    width: 30%;
-    background-color: white;
-}
-*/
-
 #sortiment td:first-child img:hover {
     top: 10vh;
     position: fixed;
@@ -309,6 +297,11 @@ button:hover {
 
 #cart table td button {
     float: right;
+}
+
+#cart button a {
+    text-decoration: none;
+    color: var(--font);
 }
 
 #total-price {
