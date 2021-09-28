@@ -350,7 +350,7 @@ let eftermiddagskager = [
 },
 {"name" : "Lille kransekage jordbærtærte",
 "price" : 21.00,
-"imageurl": "images/products/Jordbærtærte.png",
+"imageurl": "images/products/",
 "orderable": false
 },
 {"name" : "Jordbærtærte",
