@@ -374,6 +374,10 @@ footer h3 {
     text-align: center;
 }
 
+footer a {
+    color: rgb(255, 255, 255);
+}
+
 @media screen and (max-width: 1800px) {
     #cart {
         top: 0;
