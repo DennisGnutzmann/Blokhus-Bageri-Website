@@ -162,10 +162,10 @@ function refreshCartAmount() {
      document.getElementById("cart-name").innerHTML= 'Dein Korb ('+getTotalItems()+')'; 
      break;
      case "en":
-     document.getElementById("cart-name").innerHTML= 'Your Cart ('+getTotalItems()+')'; 
+     document.getElementById("cart-name").innerHTML= 'Your cart ('+getTotalItems()+')'; 
      break;
      default:
-     document.getElementById("cart-name").innerHTML= 'Your Cart ('+getTotalItems()+')'; 
+     document.getElementById("cart-name").innerHTML= 'Your cart ('+getTotalItems()+')'; 
    }
 }
 

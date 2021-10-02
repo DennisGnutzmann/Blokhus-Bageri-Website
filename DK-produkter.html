@@ -2,13 +2,13 @@
 
 <html lang="da">
     <head>
-        <title>Blokhus Bageri - Products</title>
+        <title>Blokhus Bageri - Order Online</title>
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="js/database.js"></script>
         <script src="js/shop.js"></script>
     </head>
-    <body onload="initProducts()">
+    <body onload="initOrders()">
         <header>
             <div id="logo">
                 <a href="index.html"><div id="logo-image">
@@ -20,7 +20,7 @@
                 <a href="index.html">Nyheder</a>
                 <a href="DK-om-os.html">Om os</a>
                 <a href="DK-kontakter.html">Kontakt os</a>
-                <a href="DK-produkter.html" class=active>Sortiment</a>
+                <a href="DK-produkter.html">Produkter</a>
                 <div class="dropdown">
                     <a href="DK-produkter.html"><img src="images/dane-flag-medium.png" alt=""></a>
                     <div class="dropdown-content">
@@ -30,15 +30,29 @@
                 </div>
             </nav>
             <div id="shoppingcart">
-                <a href="DK-bestillinger.html"><div id="cart-image">
+                <a href="DK-kurv.html"><div id="cart-image">
                 <img src="images/shoppingcart.png" alt="BlokhusBageriLogo"></div>
                 </a>
-                <div id="cart-name">Bestil online!</div>
+                <div id="cart-name">Din kurv (0)</div>
             </div>
         </header>
-        <main>         
-            <section id="sortiment" class="no-buttons">
+        <div id="cart">
+            <h2>Indkøbskurv</h2>
+            <table>
+                <thead>
+                    <th>Navn</th>
+                    <th>Pris</th>
+                    <th>Beløb</th>
+                </thead>
+                <tbody id="cart-tbody"></tbody>
+            </table>
+            <div id="total-price">Total: </div>
+            <button type="button"><a href="DK-kurv.html">Videre til checkout!</a></button>
+        </div>
+        <main>
+            <section id="sortiment">
                 <h2>Vores produkter</h2>
+                <span id="order-note">Bemærk: Kagemænd og store mængder af andre kager kan bestilles pr. telefon.</span>
                 <h3>Rundstykker/Boller</h3>
                 <table id="rundstykke">
                     <tr><th>Billede</th>

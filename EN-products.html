@@ -2,13 +2,13 @@
 
 <html lang="en">
     <head>
-        <title>Blokhus Bageri - Products</title>
+        <title>Blokhus Bageri - Order Online</title>
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="js/database.js"></script>
         <script src="js/shop.js"></script>
     </head>
-    <body onload="initProducts()">
+    <body onload="initOrders()">
         <header>
             <div id="logo">
                 <a href="EN-index.html"><div id="logo-image">
@@ -20,25 +20,39 @@
                 <a href="EN-index.html">News</a>
                 <a href="EN-about-us.html">About Us</a>
                 <a href="EN-contacts.html">Contact Us</a>
-                <a href="EN-products.html" class=active>Products</a>
+                <a href="EN-products.html">Products</a>
                 <div class="dropdown">
-                    <a href="EN-products.html"><img src="images/british-flag-medium.png" alt=""></a>
+                    <a href="EN-cart.html"><img src="images/british-flag-medium.png" alt=""></a>
                     <div class="dropdown-content">
-                        <a href="DK-produkter.html"><img src="images/dane-flag-medium.png" alt=""></a>
-                        <a href="DE-produkte.html"><img src="images/german-flag-medium.png" alt=""></a>
+                        <a href="DK-kurv.html"><img src="images/dane-flag-medium.png" alt=""></a>
+                        <a href="DE-korb.html"><img src="images/german-flag-medium.png" alt=""></a>
                     </div>
                 </div>
             </nav>
             <div id="shoppingcart">
-                <a href="EN-orders.html"><div id="cart-image">
+                <a href="EN-cart.html"><div id="cart-image">
                 <img src="images/shoppingcart.png" alt="BlokhusBageriLogo"></div>
                 </a>
-                <div id="cart-name">Order online!</div>
+                <div id="cart-name">Your cart (0)</div>
             </div>
         </header>
-        <main>         
-            <section id="sortiment" class="no-buttons">
+        <div id="cart">
+            <h2>Shopping Cart</h2>
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                </thead>
+                <tbody id="cart-tbody"></tbody>
+            </table>
+            <div id="total-price">Total: </div>
+            <button type="button"><a href="EN-cart.html">Proceed to checkout!</a></button>
+        </div>
+        <main>
+            <section id="sortiment">
                 <h2>Our Products</h2>
+                <span id="order-note">Note: Birthday cakes and large quantities of other non-orderable products can be ordered via phone.</span>
                 <h3>Buns</h3>
                 <table id="rundstykke">
                     <tr><th>Image</th>

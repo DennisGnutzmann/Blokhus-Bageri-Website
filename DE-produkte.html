@@ -2,13 +2,13 @@
 
 <html lang="de">
     <head>
-        <title>Blokhus Bageri - Produkte</title>
+        <title>Blokhus Bageri - Online-Bestellungen</title>
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="js/database.js"></script>
         <script src="js/shop.js"></script>
     </head>
-    <body onload="initProducts()">
+    <body onload="initOrders()">
         <header>
             <div id="logo">
                 <a href="DE-index.html"><div id="logo-image">
@@ -20,7 +20,7 @@
                 <a href="DE-index.html">Neuigkeiten</a>
                 <a href="DE-über-uns.html">Über uns</a>
                 <a href="DE-kontakte.html">Kontakte</a>
-                <a href="DE-produkte.html" class=active>Produkte</a>
+                <a href="DE-produkte.html">Produkte</a>
                 <div class="dropdown">
                     <a href="DE-produkte.html"><img src="images/german-flag-medium.png" alt=""></a>
                     <div class="dropdown-content">
@@ -30,15 +30,29 @@
                 </div>
             </nav>
             <div id="shoppingcart">
-                <a href="DE-bestellungen.html"><div id="cart-image">
+                <a href="DE-korb.html"><div id="cart-image">
                 <img src="images/shoppingcart.png" alt="BlokhusBageriLogo"></div>
                 </a>
-                <div id="cart-name">Online bestellen!</div>
+                <div id="cart-name">Dein Korb (0)</div>
             </div>
         </header>
-        <main>         
-            <section id="sortiment" class="no-buttons">
+        <div id="cart">
+            <h2>Einkaufskorb</h2>
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Preis</th>
+                    <th>Menge</th>
+                </thead>
+                <tbody id="cart-tbody"></tbody>
+            </table>
+            <div id="total-price">Gesamt: </div>
+            <button type="button"><a href="DE-korb.html">Weiter zum Checkout!</a></button>
+        </div>
+        <main>
+            <section id="sortiment">
                 <h2>Unsere Produkte</h2>
+                <span id="order-note">Hinweis: Geburtstagskuchen und andere Kuchen in größeren Mengen können per Telefon bestellt werden.</span>
                 <h3>Brötchen</h3>
                 <table id="rundstykke">
                     <tr><th>Bild</th>

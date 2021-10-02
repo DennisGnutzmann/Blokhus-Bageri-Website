@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 
-<html lang="da">
+<html lang="de">
     <head>
-        <title>Blokhus Bageri - Betingelser</title>
+        <title>Blokhus Bageri - Online-Bestellungen</title>
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/database.js"></script>
         <script src="js/shop.js"></script>
     </head>
-    <body onload="init()">
+    <body onload="initCheckout()">
         <header>
             <div id="logo">
-                <a href="index.html"><div id="logo-image">
+                <a href="DE-index.html"><div id="logo-image">
                 <img src="images/logoextrasmall.png" alt="BlokhusBageriLogo"></div>
                 </a>
                 <div id="logo-name">Blokhus Bageri</div>
             </div>
             <nav>
-                <a href="index.html">Nyheder</a>
-                <a href="DK-om-os.html" class=active>Om os</a>
-                <a href="DK-kontakter.html">Kontakt os</a>
-                <a href="DK-produkter.html">Sortiment</a>
+                <a href="DE-index.html">Neuigkeiten</a>
+                <a href="DE-über-uns.html">Über uns</a>
+                <a href="DE-kontakte.html">Kontakte</a>
+                <a href="DE-produkte.html">Produkte</a>
                 <div class="dropdown">
-                    <a href="DK-betingelser.html"><img src="images/dane-flag-medium.png" alt=""></a>
+                    <a href="DE-korb.html"><img src="images/german-flag-medium.png" alt=""></a>
                     <div class="dropdown-content">
-                        <a href="EN-terms.html"><img src="images/british-flag-medium.png" alt=""></a>
-                        <a href="DE-bedingungen.html"><img src="images/german-flag-medium.png" alt=""></a>
+                        <a href="DK-kurv.html"><img src="images/dane-flag-medium.png" alt=""></a>
+                        <a href="EN-cart.html"><img src="images/british-flag-medium.png" alt=""></a>                      
                     </div>
                 </div>
             </nav>
             <div id="shoppingcart">
-                <a href="DK-bestillinger.html"><div id="cart-image">
+                <a href="DE-korb.html"><div id="cart-image">
                 <img src="images/shoppingcart.png" alt="BlokhusBageriLogo"></div>
                 </a>
-                <div id="cart-name">Bestil online!</div>
+                <div id="cart-name">Dein Korb (0)</div>
             </div>
         </header>
-        <main>          
-            <section>
-                <h2>Servicebetingelser</h2>
-
-            </section>
+        <main>
+            <div id="cart">
+                <h2>Einkaufskorb</h2>
+                <table>
+                    <thead>
+                        <th>Name</th>
+                        <th>Preis</th>
+                        <th>Menge</th>
+                    </thead>
+                    <tbody id="cart-tbody"></tbody>
+                </table>
+                <div id="total-price">Gesamt: </div>
+            </div>
         </main>
         <footer>
             <div>
-                <h3>Åbningstider</h3>
-                <span>Hver dag: 6:00-18:00</span>
+                <h3>Öffnungszeiten</h3>
+                <span>Jeden Tag: 6:00-18:00</span>
             </div>
             <div>
-                <h3>Kontakter</h3>
+                <h3>Kontakte</h3>
                 <span>Telefon: +45 98 24 85 20<br>
                     Email: blokhusbageri@hotmail.com<br>
                     Addresse: Aalborgvej 2, 9492 Blokhus
                 </span>
-            </div>
-            <div>
-                <h3>Vilkår</h3>
-                <a href="DK-betingelser.html">Klik her!</a>
             </div>
             <div>
                 <h3>Links</h3>
