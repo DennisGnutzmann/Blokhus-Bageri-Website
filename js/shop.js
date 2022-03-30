@@ -1,4 +1,7 @@
 let cart = [];
+let pickupname = "";
+let pickupdate = "";
+let paymentmethod ="";
 
 function generateTable(array,name) {
     let table = document.getElementById(name);
@@ -149,7 +152,7 @@ function refreshCart() {
 
     //Recalculate total amount of items
     refreshCartAmount();
-    setCookie();
+    setCartCookie();
 }
 
 function refreshCartAmount() {
@@ -189,21 +192,55 @@ function initProducts() {
 function initCheckout() {
   getCookie();
   refreshCart();
+  getFormCookies();
 }
 
-function setCookie() {
-  document.cookie = JSON.stringify(cart);
+function setCartCookie() {
+  document.cookie = "cart=" + JSON.stringify(cart);
+}
+
+function setNameCookie(name) {
+  document.cookie = "pickupname=" + name;
+}
+
+function setDateCookie(date) {
+  document.cookie = "pickupdate=" + date;
+}
+
+function setPaymentMethodCookie(method) {
+  document.cookie = "paymentmethod=" + method;
+}
+
+function setFormCookies(form) {
+  setNameCookie(form.pickupname.value);
+  setDateCookie(form.pickupdate.value);
+  setPaymentMethodCookie(form.paymentmethod.value)
 }
 
 function getCookie() {
-  let test = document.cookie;
-  if (test !== null) {
-    cart = JSON.parse(document.cookie);
+  let cookie = document.cookie;
+  if (cookie !== null) {
+    var cookieArray = cookie.split(/; */);
+    for(var i=0;i<cookieArray.length;i++){
+       var keyValArr = cookieArray[i].split("=");
+       if (keyValArr[0]==="cart") {
+        cart = JSON.parse(keyValArr[1]);
+       }
+       if (keyValArr[0]==="pickupname") {
+        pickupname = keyValArr[1];
+       }
+       if (keyValArr[0]==="pickupdate") {
+        pickupdate = keyValArr[1];
+       }
+       if (keyValArr[0]==="paymentmethod") {
+        paymentmethod = keyValArr[1];
+       }
+    }
   }
 }
 
 function resetCart() {
   cart = [];
-  setCookie();
-  //location.reload();
+  setCartCookie();
+  location.reload();
 }
