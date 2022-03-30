@@ -201,3 +201,8 @@ function getCookie() {
     cart = JSON.parse(document.cookie);
   }
 }
+
+function resetCart() {
+  cart = [];
+  setCookie();
+}
