@@ -205,4 +205,5 @@ function getCookie() {
 function resetCart() {
   cart = [];
   setCookie();
+  location.reload();
 }
