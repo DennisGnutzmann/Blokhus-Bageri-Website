@@ -234,31 +234,6 @@ let morgenkager = [
 "price" : 46.00,
 "imageurl": "images/products/",
 "orderable": true
-},
-{"name" : "Lille Wienerbrødkagemand (til 8 personer)",
-"price" : 145.00,
-"imageurl": "images/products/",
-"orderable": false
-},
-{"name" : "Wienerbrødkagemand (til 15 personer)",
-"price" : 185.00,
-"imageurl": "images/products/",
-"orderable": false
-},
-{"name" : "Lille Brunsvigerkagemand (til 8 personer)",
-"price" : 145.00,
-"imageurl": "images/products/",
-"orderable": false
-},
-{"name" : "Brunsvigerkagemand (til 15 personer)",
-"price" : 185.00,
-"imageurl": "images/products/",
-"orderable": false
-},
-{"name" : "Hindbærkagemand (til 15 personer)",
-"price" : 200.00,
-"imageurl": "images/products/",
-"orderable": false
 }
 ]
 
@@ -374,6 +349,31 @@ let diverse = [
 },
 {"name" : "Pølsehorn",
 "price" : 18.00,
+"imageurl": "images/products/",
+"orderable": false
+},
+{"name" : "Lille Wienerbrødkagemand (til 8 personer)",
+"price" : 145.00,
+"imageurl": "images/products/",
+"orderable": false
+},
+{"name" : "Wienerbrødkagemand (til 15 personer)",
+"price" : 185.00,
+"imageurl": "images/products/",
+"orderable": false
+},
+{"name" : "Lille Brunsvigerkagemand (til 8 personer)",
+"price" : 145.00,
+"imageurl": "images/products/",
+"orderable": false
+},
+{"name" : "Brunsvigerkagemand (til 15 personer)",
+"price" : 185.00,
+"imageurl": "images/products/",
+"orderable": false
+},
+{"name" : "Hindbærkagemand (til 15 personer)",
+"price" : 200.00,
 "imageurl": "images/products/",
 "orderable": false
 }
