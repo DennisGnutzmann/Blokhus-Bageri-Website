@@ -2,13 +2,12 @@
 
 <html lang="de">
     <head>
-        <title>Blokhus Bageri - Online-Bestellungen</title>
+        <title>Blokhus Bageri - Über uns</title>
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="js/database.js"></script>
         <script src="js/shop.js"></script>
     </head>
-    <body onload="initCheckout()">
+    <body onload="init()">
         <header>
             <div id="logo">
                 <a href="DE-index.html"><div id="logo-image">
@@ -20,13 +19,13 @@
                 <a href="DE-index.html">Neuigkeiten</a>
                 <a href="DE-über-uns.html">Über uns</a>
                 <a href="DE-kontakte.html">Kontakte</a>
-                <a href="DE-bedingungen.html">AGB</a>
+                <a href="DE-bedingungen.html" class=active>AGB</a>
                 <a href="DE-produkte.html">Produkte</a>
                 <div class="dropdown">
-                    <a href="DE-korb.html"><img src="images/german-flag-medium.png" alt=""></a>
+                    <a href="DE-bedingungen.html"><img src="images/german-flag-medium.png" alt=""></a>
                     <div class="dropdown-content">
-                        <a href="DK-kurv.html"><img src="images/dane-flag-medium.png" alt=""></a>
-                        <a href="EN-cart.html"><img src="images/british-flag-medium.png" alt=""></a>                      
+                        <a href="DK-betingelser.html"><img src="images/dane-flag-medium.png" alt=""></a>
+                        <a href="EN-terms.html"><img src="images/british-flag-medium.png" alt=""></a>
                     </div>
                 </div>
             </nav>
@@ -37,36 +36,11 @@
                 <div id="cart-name">Dein Korb (0)</div>
             </div>
         </header>
-        <main>
-            <div id="cart">
-                <h2>Einkaufskorb</h2>
-                <table>
-                    <thead>
-                        <th>Name</th>
-                        <th>Preis</th>
-                        <th>Menge</th>
-                    </thead>
-                    <tbody id="cart-tbody"></tbody>
-                </table>
-                <div id="total-price">Gesamt: </div>
-            </div>
-            <form id="orderinfo" oninput="setFormCookies(this)" >
-                <label for="pickupname">Your name:</label>
-                <input type="text" id="pickupname" required>
-                <br>
-                <label for="pickupdate">Date and time of pickup:</label>
-                <input type="datetime-local" id="pickupdate" required>
-                <br>
-                <p>Your preferred payment method:</p>
-                <input type="radio" id="pop" name="paymentmethod" value="payonpickup" checked>
-                <label for="pop">Pay directly in the shop when picking up your order.</label>
-                <br>
-                <input type="radio" id="mbp" name="paymentmethod" value="mobilepay">
-                <label for="mbp">Pay in advance via MobilePay.</label>
-                <br>
-                <input type="submit" value="Send order!">
-            </form>
-            <button onclick="resetCart()">Reset cart!</button>
+        <main>      
+            <section id="terms">
+                <h2>Allgemeine Geschäftsbedingungen</h2>
+
+            </section>    
         </main>
         <footer>
             <div>
