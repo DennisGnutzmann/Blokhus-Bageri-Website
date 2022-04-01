@@ -176,8 +176,10 @@ main h2 {
     text-align: center;
 }
 
-#order-note {
-    font-size: smaller;
+.textbox {
+    background-color: var(--font);
+    padding: 5px;
+    line-height: 25px;
 }
 
 #sortiment {
