@@ -53,20 +53,29 @@
                 <div id="total-price">Total: </div>
             </div>
             <form id="orderinfo" oninput="setFormCookies(this)" action="php/order.php" method="post">
+                <h3>Order form</h3>
                 <label for="pickupname">Your name:</label>
-                <input type="text" id="pickupname" name="pickupname" required>
+                <input type="text" id="pickupname" name="pickupname" placeholder="Your name" required>
                 <br>
                 <label for="pickupdate">Date and time of pickup:</label>
                 <input type="datetime-local" id="pickupdate" name="pickupdate" required>
                 <br>
-                <p>Your preferred payment method:</p>
-                <input type="radio" id="pop" name="paymentmethod" value="Direct Payment" checked>
-                <label for="pop">Pay directly in the shop when picking up your order.</label>
-                <br>
-                <input type="radio" id="mbp" name="paymentmethod" value="MobilePay">
-                <label for="mbp">Pay in advance via MobilePay.</label>
-                <br>
-                <input type="submit" value="Send order!">
+                <p>
+                    <div>Your prefered payment method:</div>
+                    <input type="radio" id="dip" name="paymentmethod" value="Direct Payment" checked>
+                    <label for="pop">Pay directly in the shop when picking up your order.</label>
+                    <br>
+                    <input type="radio" id="mbp" name="paymentmethod" value="MobilePay">
+                    <label for="mbp">Pay in advance via MobilePay.</label>
+                    <br>
+                </p>
+                <p>
+                    <div>Consent:</div>
+                    <input type="checkbox" id="agreement" name="agreement">
+                    <label for="agreement">I agree to the <a href="EN-terms.html" target="_blank">Terms of Service</a> .</label>
+                </p>
+                <div class="centerer"><div id="warning-message"></div></div>
+                <div class="centerer" id="buttonholder"></div>
             </form>
         </main>
         <footer>

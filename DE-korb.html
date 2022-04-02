@@ -53,20 +53,29 @@
                 <div id="total-price">Gesamt: </div>
             </div>
             <form id="orderinfo" oninput="setFormCookies(this)" action="php/order.php" method="post">
+                <h3>Bestellformular</h3>
                 <label for="pickupname">Ihr Name:</label>
-                <input type="text" id="pickupname" name="pickupname" required>
+                <input type="text" id="pickupname" name="pickupname" placeholder="Ihr Name" required>
                 <br>
-                <label for="pickupdate">Abholzeitpunkt und -datum:</label>
+                <label for="pickupdate">Abholdatum und -zeitpunkt:</label>
                 <input type="datetime-local" id="pickupdate" name="pickupdate" required>
                 <br>
-                <p>Gewünschte Zahlungsmethode:</p>
-                <input type="radio" id="pop" name="paymentmethod" value="Direct Payment" checked>
-                <label for="pop">Direkt beim Abholen im Geschäft bezahlen.</label>
-                <br>
-                <input type="radio" id="mbp" name="paymentmethod" value="MobilePay">
-                <label for="mbp">Im Voraus mit MobilePay bezahlen.</label>
-                <br>
-                <input type="submit" value="Bestellung absenden!">
+                <p>
+                    <div>Gewünschte Zahlungsmethode:</div>
+                    <input type="radio" id="dip" name="paymentmethod" value="Direct Payment" checked>
+                    <label for="pop">Direkt beim Abholen im Geschäft bezahlen.</label>
+                    <br>
+                    <input type="radio" id="mbp" name="paymentmethod" value="MobilePay">
+                    <label for="mbp">Im Voraus mit MobilePay bezahlen.</label>
+                    <br>
+                </p>
+                <p>
+                    <div>Einverständniserklärung:</div>
+                    <input type="checkbox" id="agreement" name="agreement">
+                    <label for="agreement">Ich stimme den <a href="DE-bedingungen.html" target="_blank">Geschäftsbedingungen</a> zu.</label>
+                </p>
+                <div class="centerer"><div id="warning-message"></div></div>
+                <div class="centerer" id="buttonholder"></div>
             </form>
         </main>
         <footer>

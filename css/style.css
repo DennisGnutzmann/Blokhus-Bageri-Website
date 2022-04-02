@@ -411,6 +411,51 @@ footer a {
     width: 80%;
 }
 
+#orderinfo {
+    box-sizing: border-box;
+    border: var(--background);
+    border-width: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: var(--font);
+    width: 80%;
+    margin: 5% auto 5% auto;
+    padding: 1%;
+}
+
+#orderinfo h3 {
+    text-decoration: underline;
+}
+
+#orderinfo input[type=text],input[type=datetime-local] {
+    width: 180px;
+    display: block;
+}
+
+#orderinfo input[type=submit] {
+    box-sizing: border-box;
+    border: var(--font);
+    border-width: 5px;
+    border-radius: 1px;
+    border-style: ridge;
+    background-color: var(--background);
+    color: var(--font);
+    font-size: large;
+    padding: 5px;
+    margin: auto;
+
+}
+
+#warning-message {
+    color: red;
+    font-size: small;
+}
+
+.centerer {
+   text-align: center;
+}
+
+
 @media screen and (max-width: 1800px) {
     #cart {
         top: 0;

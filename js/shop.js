@@ -107,6 +107,7 @@ function removeProduct(name) {
         }
     }
     refreshCart();
+    updateSendButton();
 }
 
 function refreshCart() {
@@ -193,6 +194,7 @@ function initCheckout() {
   getCookie();
   refreshCart();
   getFormCookies();
+  updateSendButton()
 }
 
 function setCartCookie() {
@@ -201,20 +203,36 @@ function setCartCookie() {
 
 function setNameCookie(name) {
   document.cookie = "pickupname=" + name;
+  pickupname=name;
 }
 
 function setDateCookie(date) {
   document.cookie = "pickupdate=" + date;
+  pickupdate=date;
 }
 
 function setPaymentMethodCookie(method) {
   document.cookie = "paymentmethod=" + method;
+  paymentmethod=method;
 }
 
 function setFormCookies(form) {
   setNameCookie(form.pickupname.value);
   setDateCookie(form.pickupdate.value);
   setPaymentMethodCookie(form.paymentmethod.value)
+  updateSendButton()
+}
+
+function getFormCookies() {
+  document.getElementById("pickupname").value=pickupname;
+  document.getElementById("pickupdate").value=pickupdate;
+  if (paymentmethod=="MobilePay") {
+    document.getElementById("dip").checked=false
+    document.getElementById("mbp").checked=true;
+  } else {
+    document.getElementById("dip").checked=true;
+    document.getElementById("mbp").checked=false;
+  }
 }
 
 function getCookie() {
@@ -239,8 +257,95 @@ function getCookie() {
   }
 }
 
-function resetCart() {
-  cart = [];
-  setCartCookie();
-  location.reload();
+function updateSendButton() {
+  let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+  let buttonholder = document.getElementById("buttonholder");
+  let warningmessage = document.getElementById("warning-message");
+  if (cart.length==0) {
+    buttonholder.innerHTML='<input id="submit-button" type="submit" disabled>';
+    document.getElementById("submit-button").style.backgroundColor="grey";
+    document.getElementById("submit-button").style.color="black";
+    switch(lang) {
+      case "da":
+      warningmessage.innerHTML= 'Din indkøbskurv er tom!'; 
+      break;
+      case "de":
+      warningmessage.innerHTML= 'Ihr Einkaufskorb ist leer!'; 
+      break;
+      case "en":
+      warningmessage.innerHTML= 'Your shopping cart is empty!'; 
+      break;
+      default:
+      warningmessage.innerHTML= 'Your shopping cart is empty!'; 
+    } 
+  } else if (pickupname.length==0) {
+    buttonholder.innerHTML='<input id="submit-button" type="submit" disabled>';
+    document.getElementById("submit-button").style.backgroundColor="grey";
+    document.getElementById("submit-button").style.color="black";
+    switch(lang) {
+      case "da":
+      warningmessage.innerHTML= 'Indtast venligst dit navn!'; 
+      break;
+      case "de":
+      warningmessage.innerHTML= 'Bitte geben sie ihren Namen an!'; 
+      break;
+      case "en":
+      warningmessage.innerHTML= 'Please enter your name!'; 
+      break;
+      default:
+      warningmessage.innerHTML= 'Please enter your name!';
+    } 
+  } else if (pickupname.length>20) {
+    buttonholder.innerHTML='<input id="submit-button" type="submit" disabled>';
+    document.getElementById("submit-button").style.backgroundColor="grey";
+    document.getElementById("submit-button").style.color="black";
+    switch(lang) {
+      case "da":
+      warningmessage.innerHTML= 'Indtast venligst ikke mere end 20 tegn i navnefeltet!'; 
+      break;
+      case "de":
+      warningmessage.innerHTML= 'Bitte benutzen sie nicht mehr als 20 Zeichen im Namensfeld!'; 
+      break;
+      case "en":
+      warningmessage.innerHTML= 'Please do not enter more that 20 characters in the name field!'; 
+      break;
+      default:
+      warningmessage.innerHTML= 'Please do not enter more that 20 characters in the name field!';
+    } 
+  } else if (!(document.getElementById("agreement").checked)) {
+    buttonholder.innerHTML='<input id="submit-button" type="submit" disabled>';
+    document.getElementById("submit-button").style.backgroundColor="grey";
+    document.getElementById("submit-button").style.color="black";
+    switch(lang) {
+      case "da":
+      warningmessage.innerHTML= 'Du skal acceptere vores vilkår for at fortsætte!'; 
+      break;
+      case "de":
+      warningmessage.innerHTML= 'Sie müssen den Geschäftsbedingungen zustimmen um fortzufahren!'; 
+      break;
+      case "en":
+      warningmessage.innerHTML= 'You have to agree to our terms to proceed!'; 
+      break;
+      default:
+      warningmessage.innerHTML= 'You have to agree to our terms to proceed!';
+    } 
+  } else {
+    buttonholder.innerHTML='<input id="submit-button" type="submit" value="Send order!">';
+    document.getElementById("submit-button").style.backgroundColor="var(--background)";
+    document.getElementById("submit-button").style.color="var(--font)";
+    warningmessage.innerHTML="";
+  }
+  switch(lang) {
+    case "da":
+    document.getElementById("submit-button").value= 'Sende ordre!'; 
+    break;
+    case "de":
+    document.getElementById("submit-button").value= 'Bestellung absenden!'; 
+    break;
+    case "en":
+    document.getElementById("submit-button").value= 'Send order!'; 
+    break;
+    default:
+    document.getElementById("submit-button").value= 'Send order!'; 
+  }  
 }
