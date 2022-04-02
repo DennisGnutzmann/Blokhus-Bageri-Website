@@ -52,23 +52,22 @@
                 </table>
                 <div id="total-price">Total: </div>
             </div>
-            <form id="orderinfo" oninput="setFormCookies(this)" >
-                <label for="pickupname">Your name:</label>
-                <input type="text" id="pickupname" required>
+            <form id="orderinfo" oninput="setFormCookies(this)" action="php/order.php" method="post">
+                <label for="pickupname">Dit navn:</label>
+                <input type="text" id="pickupname" name="pickupname" required>
                 <br>
-                <label for="pickupdate">Date and time of pickup:</label>
-                <input type="datetime-local" id="pickupdate" required>
+                <label for="pickupdate">Afhentningstidspunkt og -dato:</label>
+                <input type="datetime-local" id="pickupdate" name="pickupdate" required>
                 <br>
-                <p>Your preferred payment method:</p>
-                <input type="radio" id="pop" name="paymentmethod" value="payonpickup" checked>
-                <label for="pop">Pay directly in the shop when picking up your order.</label>
+                <p>Dit foretrukne betalingsmetode:</p>
+                <input type="radio" id="pop" name="paymentmethod" value="Direct Payment" checked>
+                <label for="pop">Betale direkte i butikken ved afhentning.</label>
                 <br>
-                <input type="radio" id="mbp" name="paymentmethod" value="mobilepay">
-                <label for="mbp">Pay in advance via MobilePay.</label>
+                <input type="radio" id="mbp" name="paymentmethod" value="MobilePay">
+                <label for="mbp">Betale i forvejen via MobilePay.</label>
                 <br>
-                <input type="submit" value="Send order!">
+                <input type="submit" value="Sende ordre!">
             </form>
-            <button onclick="resetCart()">Reset cart!</button>
         </main>
         <footer>
             <div>
