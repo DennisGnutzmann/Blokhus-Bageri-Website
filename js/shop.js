@@ -1,6 +1,7 @@
 let cart = [];
 let pickupname = "";
 let pickupdate = "";
+let pickuptime = "";
 let paymentmethod ="";
 
 function generateTable(array,name) {
@@ -211,6 +212,11 @@ function setDateCookie(date) {
   pickupdate=date;
 }
 
+function setTimeCookie(time) {
+  document.cookie = "pickuptime=" + time;
+  pickuptime=time;
+}
+
 function setPaymentMethodCookie(method) {
   document.cookie = "paymentmethod=" + method;
   paymentmethod=method;
@@ -219,6 +225,7 @@ function setPaymentMethodCookie(method) {
 function setFormCookies(form) {
   setNameCookie(form.pickupname.value);
   setDateCookie(form.pickupdate.value);
+  setTimeCookie(form.pickuptime.value);
   setPaymentMethodCookie(form.paymentmethod.value)
   updateSendButton()
 }
@@ -226,6 +233,7 @@ function setFormCookies(form) {
 function getFormCookies() {
   document.getElementById("pickupname").value=pickupname;
   document.getElementById("pickupdate").value=pickupdate;
+  document.getElementById("pickuptime").value=pickuptime;
   if (paymentmethod=="MobilePay") {
     document.getElementById("dip").checked=false
     document.getElementById("mbp").checked=true;
@@ -249,6 +257,9 @@ function getCookie() {
        }
        if (keyValArr[0]==="pickupdate") {
         pickupdate = keyValArr[1];
+       }
+       if (keyValArr[0]==="pickuptime") {
+        pickuptime = keyValArr[1];
        }
        if (keyValArr[0]==="paymentmethod") {
         paymentmethod = keyValArr[1];
@@ -295,22 +306,22 @@ function updateSendButton() {
       default:
       warningmessage.innerHTML= 'Please enter your name!';
     } 
-  } else if (pickupname.length>20) {
+  } else if (pickupname.length>30) {
     buttonholder.innerHTML='<input id="submit-button" type="submit" disabled>';
     document.getElementById("submit-button").style.backgroundColor="grey";
     document.getElementById("submit-button").style.color="black";
     switch(lang) {
       case "da":
-      warningmessage.innerHTML= 'Indtast venligst ikke mere end 20 tegn i navnefeltet!'; 
+      warningmessage.innerHTML= 'Indtast venligst ikke mere end 30 tegn i navnefeltet!'; 
       break;
       case "de":
-      warningmessage.innerHTML= 'Bitte benutzen sie nicht mehr als 20 Zeichen im Namensfeld!'; 
+      warningmessage.innerHTML= 'Bitte benutzen sie nicht mehr als 30 Zeichen im Namensfeld!'; 
       break;
       case "en":
-      warningmessage.innerHTML= 'Please do not enter more that 20 characters in the name field!'; 
+      warningmessage.innerHTML= 'Please do not enter more that 30 characters in the name field!'; 
       break;
       default:
-      warningmessage.innerHTML= 'Please do not enter more that 20 characters in the name field!';
+      warningmessage.innerHTML= 'Please do not enter more that 30 characters in the name field!';
     } 
   } else if (!(document.getElementById("agreement").checked)) {
     buttonholder.innerHTML='<input id="submit-button" type="submit" disabled>';

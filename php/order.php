@@ -3,6 +3,8 @@ $name = $_POST["pickupname"];
 
 $date = $_POST["pickupdate"];
 
+$time = $_POST["pickuptime"];
+
 $paymentmethod = $_POST["paymentmethod"];
 
 $cart = json_decode($_COOKIE["cart"]);
@@ -28,9 +30,9 @@ foreach($cart as $jsonDataKey => $jsonDataValue){
     }
 }
 
-$regard = "Website Order: " . $name . " " . $date;
+$regard = "Website Order: " . $name . " " . $date . " " . $time;
 
-$message = $name . " sent an order for " . $date . ":\n\n" . $cartpretty . "\n" . "Total: " . $price ." DKK" . "\n\n" . "Payment method: " . $paymentmethod;
+$message = $name . " sent an order for " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price ." DKK" . "\n\n" . "Payment method: " . $paymentmethod;
 
 // use wordwrap() if lines are longer than 70 characters
 $message = wordwrap($message,70);
