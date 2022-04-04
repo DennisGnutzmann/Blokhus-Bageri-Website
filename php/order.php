@@ -30,15 +30,18 @@ foreach($cart as $jsonDataKey => $jsonDataValue){
     }
 }
 
-$regard = "Website Order: " . $name . " " . $date . " " . $time;
+$regard = $paymentmethod . " Order: " . $name . " " . $date . " " . $time;
 
 $message = $name . " sent an order for " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price ." DKK" . "\n\n" . "Payment method: " . $paymentmethod;
 
 // use wordwrap() if lines are longer than 70 characters
 $message = wordwrap($message,70);
 
+$header = "From: BlokhusBageri" . "\r\n";
+$header .= 'Content-type: text/plain; charset=UTF-8' . "\r\n";
+
 // send email
-mail("dennisgnutzmann@outlook.de",$regard,$message);
+mail("BlokhusBageriOrders@outlook.com",$regard,$message,$header);
 
 // redirect to home
 header("Location: ../index.html");
