@@ -443,8 +443,8 @@ footer a {
 #warning-message {
     color: red;
     font-size: small;
-    width: 200px;
-    margin: auto;
+    width: 80%;
+    margin: 0 auto 10px;
 }
 
 .centerer {
