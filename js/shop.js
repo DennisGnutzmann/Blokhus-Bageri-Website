@@ -299,10 +299,15 @@ function setAcceptableInput() {
   document.getElementById("pickuptime").setAttribute("max", "17:00");
 }
 
+// validates the form input and disables the button if necessary
 function updateSendButton() {
   let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
   let buttonholder = document.getElementById("buttonholder");
   let warningmessage = document.getElementById("warning-message");
+  warningmessage.style.color = "red";
+  var inpDate = new Date(pickupdate+" "+pickuptime);
+  var currDate = new Date();
+  currDate.setHours(currDate.getHours()+1)
   if (cart.length == 0) {
     buttonholder.innerHTML = '<input id="submit-button" type="submit" disabled>';
     document.getElementById("submit-button").style.backgroundColor = "grey";
@@ -388,6 +393,40 @@ function updateSendButton() {
       default:
         warningmessage.innerHTML = 'Please enter a time!';
     }
+  } else if (inpDate < currDate) {
+    buttonholder.innerHTML = '<input id="submit-button" type="submit" disabled>';
+    document.getElementById("submit-button").style.backgroundColor = "grey";
+    document.getElementById("submit-button").style.color = "black";
+    switch (lang) {
+      case "da":
+        warningmessage.innerHTML = 'Den angivne tid skal være mindst en time i fremtiden!';
+        break;
+      case "de":
+        warningmessage.innerHTML = 'Der angegebene Zeitpunkt muss mindestens eine Stunde in der Zukunft liegen!';
+        break;
+      case "en":
+        warningmessage.innerHTML = 'The provided time has to be at least one hour from now!';
+        break;
+      default:
+        warningmessage.innerHTML = 'The provided time has to be at least one hour from now!';
+    }
+  } else if ((inpDate.getHours() < 6) || (inpDate.getHours() > 16)) {
+    buttonholder.innerHTML = '<input id="submit-button" type="submit" disabled>';
+    document.getElementById("submit-button").style.backgroundColor = "grey";
+    document.getElementById("submit-button").style.color = "black";
+    switch (lang) {
+      case "da":
+        warningmessage.innerHTML = 'Det angivne tidspunkt skal være mellem 6:00 og 16:59!';
+        break;
+      case "de":
+        warningmessage.innerHTML = 'Die angegebene Zeit muss zwischen 6:00 und 16:59 liegen!';
+        break;
+      case "en":
+        warningmessage.innerHTML = 'The provided time has to be between 6:00 and 16:59!';
+        break;
+      default:
+        warningmessage.innerHTML = 'The provided time has to be between 6:00 and 16:59!';
+    }
   } else if (!(document.getElementById("agreement").checked)) {
     buttonholder.innerHTML = '<input id="submit-button" type="submit" disabled>';
     document.getElementById("submit-button").style.backgroundColor = "grey";
@@ -409,7 +448,24 @@ function updateSendButton() {
     buttonholder.innerHTML = '<input id="submit-button" type="submit" value="Send order!">';
     document.getElementById("submit-button").style.backgroundColor = "var(--background)";
     document.getElementById("submit-button").style.color = "var(--font)";
-    warningmessage.innerHTML = "";
+    if (paymentmethod == "MobilePay") {
+      warningmessage.style.color = "black";
+      switch (lang) {
+        case "da":
+          warningmessage.innerHTML = 'Sørg venligst for, at det angivne navn stemmer overens med navnet af den MobilePay-konto, du betaler med!';
+          break;
+        case "de":
+          warningmessage.innerHTML = 'Stellen sie bitte sicher, dass der angegebene Name mit dem bezahlenden MobilePay Account übereinstimmt!';
+          break;
+        case "en":
+          warningmessage.innerHTML = 'Please make sure that the given name matches the name of the MobilePay account you will pay with!';
+          break;
+        default:
+          warningmessage.innerHTML = 'Please make sure that the given name matches the name of the MobilePay account you will pay with!';
+      }
+    } else {
+      warningmessage.innerHTML = "";
+    }
   }
   switch (lang) {
     case "da":
