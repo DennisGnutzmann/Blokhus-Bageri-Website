@@ -1,10 +1,10 @@
 let rundstykke = [
-{"name" : "Spansk",
+{"name" : "Spansk rundstyk",
 "price" : 6.50,
 "imageurl": "images/products/",
 "orderable": true
 },
-{"name" : "Alm. med sesam",
+{"name" : "Alm. rundstyk med sesam",
 "price" : 6.50,
 "imageurl": "images/products/",
 "orderable": true
@@ -24,17 +24,17 @@ let rundstykke = [
  "imageurl": "images/products/",
  "orderable": true
 },
-{"name" : "Baguette",
+{"name" : "Baguette rundstyk",
 "price" : 8.50,
 "imageurl": "images/products/",
 "orderable": true
 },
-{"name" : "Italiensk",
+{"name" : "Italiensk rundstyk",
 "price" : 8.50,
 "imageurl": "images/products/",
 "orderable": true
 },
-{"name" : "Grøv italiensk",
+{"name" : "Grøv italiensk rundstyk",
 "price" : 8.50,
 "imageurl": "images/products/",
 "orderable": true
