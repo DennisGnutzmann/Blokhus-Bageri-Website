@@ -3,6 +3,7 @@ let pickupname = "";
 let pickupdate = "";
 let pickuptime = "";
 let paymentmethod = "";
+let lang = "";
 
 function generateTable(array, name) {
   let table = document.getElementById(name);
@@ -98,7 +99,7 @@ function addProduct(name, price, amount) {
     entry.amount = entry.amount + amount;
     entry.totalprice = entry.totalprice + amount * price;
   }
-  refreshCart();
+  refreshCart(true);
 }
 
 function removeProduct(name) {
@@ -107,11 +108,11 @@ function removeProduct(name) {
       cart.splice(i, 1);
     }
   }
-  refreshCart();
+  refreshCart(true);
   updateSendButton();
 }
 
-function refreshCart() {
+function refreshCart(withButtons) {
   let table = document.getElementById("cart-tbody");
   table.innerHTML = "";
   for (var i = 0; i < cart.length; i++) {
@@ -129,11 +130,13 @@ function refreshCart() {
     //Add and fill td for price
     let amountcell = row.insertCell(2);
     amountcell.innerHTML = cart[i].amount;
-    let button = document.createElement("BUTTON");
-    button.type = "button";
-    button.innerHTML = "X";
-    button.setAttribute("onclick", "removeProduct('" + namecell.innerHTML + "')");
-    amountcell.appendChild(button);
+    if (withButtons) {
+      let button = document.createElement("BUTTON");
+      button.type = "button";
+      button.innerHTML = "X";
+      button.setAttribute("onclick", "removeProduct('" + namecell.innerHTML + "')");
+      amountcell.appendChild(button);
+    }
   }
   //Recalculate total price
   let totalprice = document.getElementById("total-price");
@@ -182,7 +185,7 @@ function init() {
 function initOrders() {
   generateTables();
   getCookie();
-  refreshCart();
+  refreshCart(true);
 }
 
 function initProducts() {
@@ -192,11 +195,30 @@ function initProducts() {
 }
 
 function initCheckout() {
+  setLanguageCookie();
   getCookie();
-  refreshCart();
+  refreshCart(true);
   getFormCookies();
   setAcceptableInput();
   updateSendButton();
+}
+
+function initConfirmation() {
+  getCookie();
+  refreshCart(false);
+  setConfirmationMessage();
+  setMobilePayMessage();
+  deleteAllCookieInformation();
+  refreshCartAmount();
+}
+
+function deleteAllCookieInformation() {
+  cart = [];
+  setCartCookie();
+  setNameCookie("");
+  setDateCookie("");
+  setTimeCookie("");
+  setPaymentMethodCookie("");
 }
 
 function setCartCookie() {
@@ -221,6 +243,12 @@ function setTimeCookie(time) {
 function setPaymentMethodCookie(method) {
   document.cookie = "paymentmethod=" + method;
   paymentmethod = method;
+}
+
+function setLanguageCookie() {
+  let language = document.getElementsByTagName('html')[0].getAttribute('lang');
+  document.cookie = "lang=" + language;
+  lang = language;
 }
 
 function setFormCookies(form) {
@@ -265,6 +293,9 @@ function getCookie() {
       if (keyValArr[0] === "paymentmethod") {
         paymentmethod = keyValArr[1];
       }
+      if (keyValArr[0] === "lang") {
+        lang = keyValArr[1];
+      }
     }
   }
 }
@@ -305,9 +336,9 @@ function updateSendButton() {
   let buttonholder = document.getElementById("buttonholder");
   let warningmessage = document.getElementById("warning-message");
   warningmessage.style.color = "red";
-  var inpDate = new Date(pickupdate+" "+pickuptime);
+  var inpDate = new Date(pickupdate + " " + pickuptime);
   var currDate = new Date();
-  currDate.setHours(currDate.getHours()+1)
+  currDate.setHours(currDate.getHours() + 1)
   if (cart.length == 0) {
     buttonholder.innerHTML = '<input id="submit-button" type="submit" disabled>';
     document.getElementById("submit-button").style.backgroundColor = "grey";
@@ -479,5 +510,55 @@ function updateSendButton() {
       break;
     default:
       document.getElementById("submit-button").value = 'Send order!';
+  }
+}
+
+function setConfirmationMessage() {
+  let div = document.getElementById("confirmation-message");
+  let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+  switch (lang) {
+    case "da":
+      div.innerHTML = "Din ordre er blevet sendt til os. Kom gerne forbi vores butik (Aalborgvej 2, 9492 Blokhus) "
+        + "for at afhente den. Datoen og tidspunktet du valgte var " + pickupdate + " " + pickuptime + ".";
+      break;
+    case "de":
+      div.innerHTML = "Ihre Bestellung wurde an uns gesendet. Bitte kommen sie in unserem Geschäft (Aalborgvej 2, 9492 Blokhus) vorbei "
+        + "um sie abzuholen. Datum und Zeit, die sie ausgewählt haben, sind " + pickupdate + " " + pickuptime + ".";
+      break;
+    case "en":
+      div.innerHTML = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) "
+        + "to pick it up. The date and time you chose was " + pickupdate + " " + pickuptime + ".";
+      break;
+    default:
+      div.innerHTML = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) "
+        + "to pick it up. The date and time you chose was " + pickupdate + " " + pickuptime + ".";
+  }
+}
+
+function setMobilePayMessage() {
+  let div = document.getElementById("mobilepay-message");
+  if (paymentmethod == "MobilePay") {
+    let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+    let totalprice = getTotalPrice();
+    div.style.padding = "10px 5px";
+    switch (lang) {
+      case "da":
+        div.innerHTML = '<div>Husk venligst at overføre ' + totalprice + ' DKK til vores MobilePay, inden du afhenter din ordre.</div>'
+          + '<img id="mobilepay-img" src="images/MobilePayLogo.png">';
+        break;
+      case "de":
+        div.innerHTML = '<div>Bitte denken sie daran ' + totalprice + ' DKK an unser MobilePay zu überweisen, bevor sie ihre Bestellung abholen.</div>'
+          + '<img id="mobilepay-img" src="images/MobilePayLogo.png">';
+        break;
+      case "en":
+        div.innerHTML = '<div>Please remember to transfer ' + totalprice + ' DKK to our MobilePay before picking up your order.</div>'
+          + '<img id="mobilepay-img" src="images/MobilePayLogo.png">';
+        break;
+      default:
+        div.innerHTML = '<div>Please remember to transfer ' + totalprice + ' DKK to our MobilePay before picking up your order.</div>'
+          + '<img id="mobilepay-img" src="images/MobilePayLogo.png">';
+    }
+  } else {
+    div.innerHTML = '';
   }
 }

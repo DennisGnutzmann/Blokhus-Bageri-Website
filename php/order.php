@@ -43,7 +43,20 @@ $header .= 'Content-type: text/plain; charset=UTF-8' . "\r\n";
 // send email
 mail("BlokhusBageriOrders@outlook.com",$regard,$message,$header);
 
+// redirect to correct order confirmation page
+$lang = $_COOKIE["lang"];
+if (strcmp($lang, "de") == 0) {
+    header("Location: ../DE-bestellbestätigung.html");
+    exit();
+} else if (strcmp($lang, "da") == 0) {
+    header("Location: ../DK-ordrebekræftelse.html");
+    exit();
+} else {
+    header("Location: ../EN-orderconfirmation.html");
+    exit();
+}
+
 // redirect to home
-header("Location: ../index.html");
-exit();
+// header("Location: ../index.html");
+// exit();
 ?>

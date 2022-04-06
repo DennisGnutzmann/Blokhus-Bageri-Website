@@ -451,6 +451,24 @@ footer a {
    text-align: center;
 }
 
+#confirmation-message {
+    width: 80%;
+    background-color: var(--font);
+    padding: 10px 5px;
+    margin: auto;
+}
+
+#mobilepay-message {
+    width: 80%;
+    background-color: var(--font);
+    margin: auto;
+}
+
+#mobilepay-img {
+    width: 40%;
+    background-color: white;
+}
+
 
 @media screen and (max-width: 1800px) {
     #cart {
