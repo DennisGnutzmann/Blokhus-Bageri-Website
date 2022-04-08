@@ -1,4 +1,7 @@
 <?php
+
+// ---READ DATA---
+
 $name = $_POST["pickupname"];
 
 $date = $_POST["pickupdate"];
@@ -13,6 +16,7 @@ $cartpretty = "";
 
 $price = 0;
 
+// create String for email and calculate total price
 foreach($cart as $jsonDataKey => $jsonDataValue){
     foreach($jsonDataValue as $jsonArrayKey => $jsonArrayValue){
         if ($jsonArrayKey == "name") {
@@ -30,6 +34,45 @@ foreach($cart as $jsonDataKey => $jsonDataValue){
     }
 }
 
+// ---SENDFILETOPRINTER API USAGE--- DOES NOT WORK
+/*
+$tenantid = "4603270a15e1f09d81ba6cd079d8b48f";
+
+$apikey = "FYXMAed3MujGuCeLGxwi9FbQipQRxNtP";
+
+$printersn = "D8J221009390";
+
+$url = "https://stage-api.zebra.com/v2/devices/printers/send";
+
+$zplstring = "^XA^FO50,50^ADN,36,20^FDHello World!^FS^XZ";
+
+$zplfile = "order.zpl";
+file_put_contents($zplfile,$zplstring);
+
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$headers = [
+    "Content-Type" => "multipart/form-data",
+    "accept" => "text/plain",
+    "apikey" => $apikey,
+    "tenant" => $tenantid
+];
+ curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+ $data = array('sn' => $printersn, 'zpl_file' => $zplfile);
+ echo $data . "\r\n";
+ curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+ $resp = curl_exec($curl);
+ echo $resp;
+ curl_close($curl);
+
+ exit();
+
+*/
+
+// ---EMAIL---
+
 $regard = $paymentmethod . " Order: " . $name . " " . $date . " " . $time;
 
 $message = $name . " sent an order for " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price ." DKK" . "\n\n" . "Payment method: " . $paymentmethod;
@@ -43,7 +86,8 @@ $header .= 'Content-type: text/plain; charset=UTF-8' . "\r\n";
 // send email
 mail("BlokhusBageriOrders@outlook.com",$regard,$message,$header);
 
-// redirect to correct order confirmation page
+// ---REDIRECT TO CHECKOUT---
+
 $lang = $_COOKIE["lang"];
 if (strcmp($lang, "de") == 0) {
     header("Location: ../DE-bestellbestätigung.html");
@@ -55,8 +99,4 @@ if (strcmp($lang, "de") == 0) {
     header("Location: ../EN-orderconfirmation.html");
     exit();
 }
-
-// redirect to home
-// header("Location: ../index.html");
-// exit();
 ?>
