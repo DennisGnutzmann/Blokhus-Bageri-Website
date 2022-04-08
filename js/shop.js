@@ -562,3 +562,46 @@ function setMobilePayMessage() {
     div.innerHTML = '';
   }
 }
+
+function buildZPLStringFromData() {
+  var zplstring = "";
+  zplstring = "^XA^FO50,50^ADN,36,20^FDHello World!^FS^XZ";
+  return zplstring;
+}
+
+// <button onclick="sendFileToPrinter()">Send File to Printer</button>
+
+function sendFileToPrinter() {
+
+  var tenantid = "4603270a15e1f09d81ba6cd079d8b48f";
+  var apikey = "FYXMAed3MujGuCeLGxwi9FbQipQRxNtP";
+  var printersn = "D8J221009390";
+  var url = "https://api.zebra.com/v2/devices/printers/send";
+  var zplstring = buildZPLFromData();
+  var blob = new Blob([zplstring], { type: 'text/plain' });
+  var file = new File([blob], "order.txt", {type: "text/plain"});
+
+  var http = new XMLHttpRequest();
+
+  http.open("POST", url, true);
+
+  // Set the proper header information for the request, including the API Key.
+  // Do not specify the Content-Type header here, as it is implied in 
+  http.setRequestHeader("apikey", apikey); // Add API key to the header
+  http.setRequestHeader("tenant", tenantid); // Add tenant ID
+
+  http.onreadystatechange = () => { // Call a function when the state changes.
+    // if((http.readyState == 4 || http.readyState == 1) && (http.status == 200 || http.status == 500) ) {
+    if ((http.readyState == 4 || http.readyState == 1)) {
+      alert(http.responseText);
+    }
+  }
+
+  fd = new FormData();
+  fd.append("zpl_file", file); // Attach the file to be sent.
+
+  // Append the printer serial number
+  fd.append("sn", printersn);
+
+  http.send(fd);
+}
