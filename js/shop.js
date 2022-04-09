@@ -4,6 +4,25 @@ let pickupdate = "";
 let pickuptime = "";
 let paymentmethod = "";
 let lang = "";
+let openinghours = "6:00-17:30";
+
+function setOpeningHours() {
+  let div = document.getElementById("openinghours");
+  let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+  switch (lang) {
+    case "da":
+      div.innerHTML = '<h3>Åbningstider</h3>'+'<span>Hver dag: '+openinghours+'</span>';
+      break;
+    case "de":
+      div.innerHTML = '<h3>Öffnungszeiten</h3>'+'<span>Jeden Tag: '+openinghours+'</span>';
+      break;
+    case "en":
+      div.innerHTML = '<h3>Opening hours</h3>'+'<span>Every day: '+openinghours+'</span>';
+      break;
+    default:
+      div.innerHTML = '<h3>Opening hours</h3>'+'<span>Every day: '+openinghours+'</span>';
+  }
+}
 
 function generateTable(array, name) {
   let table = document.getElementById(name);
@@ -178,23 +197,27 @@ function refreshCartAmount() {
 }
 
 function init() {
+  setOpeningHours()
   getCookie();
   refreshCartAmount();
 }
 
 function initOrders() {
+  setOpeningHours()
   generateTables();
   getCookie();
   refreshCart(true);
 }
 
 function initProducts() {
+  setOpeningHours()
   generateTables();
   getCookie();
   refreshCartAmount();
 }
 
 function initCheckout() {
+  setOpeningHours()
   setLanguageCookie();
   getCookie();
   refreshCart(true);
@@ -204,6 +227,7 @@ function initCheckout() {
 }
 
 function initConfirmation() {
+  setOpeningHours()
   getCookie();
   refreshCart(false);
   setConfirmationMessage();
