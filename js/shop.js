@@ -621,7 +621,7 @@ function buildZPLStringFromData() {
   }
   for (var i = 0; i<maxitems; i++) {
     let product = cart[i];
-    zplstring += "^FT483,"+y+"^A0I,34,33^FH\^FD"+product.name+"^FS\n"+
+    zplstring += "^FT483,"+y+"^A0I,34,33^FH\^FD"+product.name.slice(0,29)+"^FS\n"+
     "^FT65,"+y+"^A0I,34,33^FH\^FD"+product.amount+"^FS\n";
     y -= step;
   }
