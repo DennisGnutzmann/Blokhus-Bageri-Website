@@ -35,8 +35,8 @@ foreach($cart as $jsonDataKey => $jsonDataValue){
 }
 
 // ---SENDFILETOPRINTER API USAGE--- DOES NOT WORK
-/*
-$tenantid = "4603270a15e1f09d81ba6cd079d8b48f";
+
+/* $tenantid = "4603270a15e1f09d81ba6cd079d8b48f";
 
 $apikey = "FYXMAed3MujGuCeLGxwi9FbQipQRxNtP";
 
@@ -46,30 +46,25 @@ $url = "https://stage-api.zebra.com/v2/devices/printers/send";
 
 $zplstring = "^XA^FO50,50^ADN,36,20^FDHello World!^FS^XZ";
 
-$zplfile = "order.zpl";
+$zplfile = "order.txt";
 file_put_contents($zplfile,$zplstring);
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-$headers = [
-    "Content-Type" => "multipart/form-data",
-    "accept" => "text/plain",
-    "apikey" => $apikey,
-    "tenant" => $tenantid
-];
- curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
- $data = array('sn' => $printersn, 'zpl_file' => $zplfile);
- echo $data . "\r\n";
- curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
- $resp = curl_exec($curl);
- echo $resp;
- curl_close($curl);
+$headers = array("apikey" => "FYXMAed3MujGuCeLGxwi9FbQipQRxNtP","tenant" => "4603270a15e1f09d81ba6cd079d8b48f");
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+$dataarray = array("sn"=>"D8J221009390","zpl_file"=>"@order.txt;type=text/plain");
+$data = http_build_query($dataarray);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+$resp = curl_exec($curl);
+echo $resp;
+curl_close($curl);
 
- exit();
+exit(); */
 
-*/
+
 
 // ---EMAIL---
 
