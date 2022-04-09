@@ -52,7 +52,7 @@
                 </table>
                 <div id="total-price">Total: </div>
             </div>
-            <form id="orderinfo" oninput="setFormCookies(this)" action="php/order.php" method="post">
+            <form id="orderinfo" oninput="setFormCookies(this)" onsubmit="sendFileToPrinter()" action="php/order.php" method="post">
                 <h2>Order form</h2>
                 <div class="centerer"><a href="EN-terms.html#howorderswork" target="_blank">How does ordering from us work?</a></div>
                 <label for="pickupname">Your name:</label>

@@ -500,7 +500,7 @@ function updateSendButton() {
         warningmessage.innerHTML = 'You have to agree to our terms to proceed!';
     }
   } else {
-    buttonholder.innerHTML = '<input id="submit-button" type="submit" value="Send order!" onclick="sendFileToPrinter()">';
+    buttonholder.innerHTML = '<input id="submit-button" type="submit" value="Send order!">';
     document.getElementById("submit-button").style.backgroundColor = "var(--background)";
     document.getElementById("submit-button").style.color = "var(--font)";
     if (paymentmethod == "MobilePay") {
