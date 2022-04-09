@@ -59,16 +59,16 @@ function generateTable(array, name) {
       let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
       switch (lang) {
         case "da":
-          buttoncell.innerHTML = "Kan ikke bestilles."
+          buttoncell.innerHTML = "Kan ikke bestilles online."
           break;
         case "de":
-          buttoncell.innerHTML = "Nicht bestellbar."
+          buttoncell.innerHTML = "Nicht online bestellbar."
           break;
         case "en":
-          buttoncell.innerHTML = "Cannot be ordered."
+          buttoncell.innerHTML = "Cannot be ordered online."
           break;
         default:
-          buttoncell.innerHTML = "Cannot be ordered."
+          buttoncell.innerHTML = "Cannot be ordered online."
       }
     }
   }
