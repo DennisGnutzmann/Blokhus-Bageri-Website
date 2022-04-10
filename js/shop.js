@@ -33,9 +33,9 @@ function generateTable(array, name) {
 
     //Add and fill td for image
     let imagecell = row.insertCell(0);
-    let img = document.createElement("IMG");
-    img.src = array[i - 1].imageurl;
-    imagecell.appendChild(img);
+    if (array[i - 1].imageurl!=="images/products/") {
+      imagecell.innerHTML='<a href="'+array[i - 1].imageurl+'" target="_blank"><img src="'+array[i - 1].imageurl+'"></a>';
+    }
 
     //Add and fill td for name
     let namecell = row.insertCell(1);
@@ -49,11 +49,16 @@ function generateTable(array, name) {
     let buttoncell = row.insertCell(3);
     if (array[i - 1].orderable) {
       //Add the button with onclick event
-      let button = document.createElement("BUTTON");
-      button.type = "button";
-      button.innerHTML = "+";
-      button.setAttribute("onclick", "addProduct('" + array[i - 1].name + "'," + array[i - 1].price + ",1)");
-      buttoncell.appendChild(button);
+      let button1 = document.createElement("BUTTON");
+      button1.type = "button";
+      button1.innerHTML = "+1";
+      button1.setAttribute("onclick", "addProduct('" + array[i - 1].name + "'," + array[i - 1].price + ",1)");
+      buttoncell.appendChild(button1);
+      let button5 = document.createElement("BUTTON");
+      button5.type = "button";
+      button5.innerHTML = "+5";
+      button5.setAttribute("onclick", "addProduct('" + array[i - 1].name + "'," + array[i - 1].price + ",5)");
+      buttoncell.appendChild(button5);
     } else {
       //Put correct text based on htmls lang attribute
       let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
