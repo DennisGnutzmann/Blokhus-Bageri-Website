@@ -74,7 +74,7 @@ let rundstykke = [
     {
         "name": "Horn med birkes",
         "price": 8.50,
-        "imageurl": "images/products/Grøv flute.png",
+        "imageurl": "images/products/",
         "orderable": false
     },
     {
