@@ -2,25 +2,31 @@ let rundstykke = [
     {
         "name": "Spansk rundstyk",
         "price": 6.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Spansk Rundstykker.JPG",
         "orderable": true
     },
     {
         "name": "Alm. rundstyk med sesam",
         "price": 6.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Alm. rundtstyk med sesam.JPG",
+        "orderable": true
+    },
+    {
+        "name": "Alm. rundstyk med hvid birkes",
+        "price": 6.50,
+        "imageurl": "images/products/Alm. rundtstyk med hvid birkes.JPG",
         "orderable": true
     },
     {
         "name": "Håndværker",
         "price": 6.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Håndværker.JPG",
         "orderable": true
     },
     {
         "name": "Skagenslap",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Skagenslap.JPG",
         "orderable": true
     },
     {
@@ -32,50 +38,44 @@ let rundstykke = [
     {
         "name": "Salt og peber rundstyk",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Salt og Peber rundstyk.JPG",
         "orderable": true
     },
     {
         "name": "Baguette rundstyk",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Baguette rundstyk.JPG",
         "orderable": true
     },
     {
         "name": "Italiensk rundstyk",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Italiensk rundstyk.JPG",
         "orderable": true
     },
     {
         "name": "Grøv italiensk rundstyk",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Grøv italiensk rundstyk.JPG",
         "orderable": true
     },
     {
         "name": "Birkes",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Birkes.JPG",
         "orderable": true
     },
     {
         "name": "Grøv birkes",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Grøv birkes.JPG",
         "orderable": true
     },
     {
         "name": "Fibersnegle",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Fibersnegle.JPG",
         "orderable": true
-    },
-    {
-        "name": "Horn med birkes",
-        "price": 8.50,
-        "imageurl": "images/products/",
-        "orderable": false
     },
     {
         "name": "Gulerødsboller",
@@ -92,38 +92,38 @@ let rundstykke = [
     {
         "name": "Krydde",
         "price": 6.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Krydde.JPG",
         "orderable": true
     },
     {
         "name": "Teboller",
         "price": 7.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Teboller.JPG",
         "orderable": true
     },
     {
         "name": "Chokoladeboller",
         "price": 9.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Chokoladeboller.JPG",
         "orderable": true
     },
     {
         "name": "Rosinboller",
         "price": 9.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Rosinboller.JPG",
         "orderable": true
     }
 ]
 
 let broed = [
     {
-        "name": "Softkerne rugbrød (80%)",
+        "name": "Softkerne rugbrød (80% kerner)",
         "price": 35.00,
-        "imageurl": "images/products/Softkerne rugbrød.png",
+        "imageurl": "images/products/Softkerne rugbrød.JPG",
         "orderable": true
     },
     {
-        "name": "Schackenborg rugbrød (60%)",
+        "name": "Schackenborg rugbrød (60% kerner)",
         "price": 35.00,
         "imageurl": "images/products/",
         "orderable": true
@@ -131,25 +131,25 @@ let broed = [
     {
         "name": "Lille alm. franskbrød",
         "price": 18.00,
-        "imageurl": "images/products/Alm. franskbrød.png",
+        "imageurl": "images/products/Lille franskbrød.png",
         "orderable": true
     },
     {
         "name": "Lille franskbrød med hvid birkes",
         "price": 18.00,
-        "imageurl": "images/products/Alm. franskbrød med hvid birkes.png",
+        "imageurl": "images/products/Lille franskbrød.png",
         "orderable": true
     },
     {
         "name": "Alm. franskbrød",
         "price": 28.00,
-        "imageurl": "images/products/Alm. franskbrød.png",
+        "imageurl": "images/products/Lille franskbrød.png",
         "orderable": true
     },
     {
         "name": "Franskbrød med hvid birkes",
         "price": 28.00,
-        "imageurl": "images/products/Alm. franskbrød med hvid birkes.png",
+        "imageurl": "images/products/Alm. franskbrød med hvid birkes.JPG",
         "orderable": true
     },
     {
@@ -161,7 +161,7 @@ let broed = [
     {
         "name": "Majsbrød",
         "price": 30.00,
-        "imageurl": "images/products/Majsbrød.png",
+        "imageurl": "images/products/Majsbrød.JPG",
         "orderable": true
     },
     {
@@ -173,13 +173,31 @@ let broed = [
     {
         "name": "Blokhus Grovbbrød",
         "price": 30.00,
-        "imageurl": "images/products/Blokhus Grovbbrød.png",
+        "imageurl": "images/products/Blokhus Grovbbrød.JPG",
+        "orderable": true
+    },
+    {
+        "name": "Alpebrød",
+        "price": 30.00,
+        "imageurl": "images/products/Alpebrød.JPG",
+        "orderable": true
+    },
+    {
+        "name": "Hjemmebagt franskbrød",
+        "price": 28.00,
+        "imageurl": "images/products/Hjemmebagt franskbrød.JPG",
+        "orderable": true
+    },
+    {
+        "name": "Hjemmebagt franskbrød med hvid birkes",
+        "price": 28.00,
+        "imageurl": "images/products/Hjemmebagt franskbrød.JPG",
         "orderable": true
     },
     {
         "name": "Italiensk brød",
         "price": 35.00,
-        "imageurl": "images/products/Italiensk brød.png",
+        "imageurl": "images/products/Italiensk brød.JPG",
         "orderable": true
     },
     {
@@ -193,12 +211,6 @@ let broed = [
         "price": 13.00,
         "imageurl": "images/products/",
         "orderable": true
-    },
-    {
-        "name": "Grøv flute",
-        "price": 13.00,
-        "imageurl": "images/products/Grøv flute.png",
-        "orderable": false
     }
 ]
 
@@ -218,37 +230,49 @@ let morgenkager = [
     {
         "name": "Kærnemælkshorn",
         "price": 14.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Kærnemælkshorn.JPG",
         "orderable": true
     },
     {
         "name": "Spandauer med creme",
         "price": 14.00,
-        "imageurl": "images/products/Spandauer med creme.png",
+        "imageurl": "images/products/Spandauer.JPG",
         "orderable": true
     },
     {
         "name": "Spandauer med syltetøj",
         "price": 14.00,
-        "imageurl": "images/products/Spandauer med creme.png",
+        "imageurl": "images/products/Spandauer.JPG",
         "orderable": true
     },
     {
-        "name": "Kanelsnegl",
+        "name": "Kanelsnegl med brun glasur",
         "price": 14.00,
-        "imageurl": "images/products/Kanelsnegl.png",
+        "imageurl": "images/products/Kanelsnegl.JPG",
+        "orderable": true
+    },
+    {
+        "name": "Kanelsnegl med hvid glasur",
+        "price": 14.00,
+        "imageurl": "images/products/Kanelsnegl.JPG",
         "orderable": true
     },
     {
         "name": "Hanekam",
         "price": 14.00,
-        "imageurl": "images/products/Hanekam.png",
+        "imageurl": "images/products/Hanekam.JPG",
         "orderable": true
     },
     {
         "name": "Brunsviger",
         "price": 14.00,
-        "imageurl": "images/products/Brunsviger.png",
+        "imageurl": "images/products/Brunsviger.JPG",
+        "orderable": true
+    },
+    {
+        "name": "Russer",
+        "price": 15.00,
+        "imageurl": "images/products/Russer.JPG",
         "orderable": true
     },
     {
@@ -280,6 +304,12 @@ let morgenkager = [
         "price": 48.00,
         "imageurl": "images/products/",
         "orderable": true
+    },
+    {
+        "name": "Bedstemorstang",
+        "price": 48.00,
+        "imageurl": "images/products/Bedstemorstang.JPG",
+        "orderable": true
     }
 ]
 
@@ -291,7 +321,13 @@ let eftermiddagskager = [
         "orderable": false
     },
     {
-        "name": "Tilbud: 5 Romkugler",
+        "name": "Tilbud: 2 Romkugler",
+        "price": 15.00,
+        "imageurl": "images/products/",
+        "orderable": false
+    },
+    {
+        "name": "Stor romkugle (400g)",
         "price": 30.00,
         "imageurl": "images/products/",
         "orderable": false
@@ -317,7 +353,7 @@ let eftermiddagskager = [
     {
         "name": "Valnøddeguf",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Valnøddeguf.png",
         "orderable": false
     },
     {
@@ -383,7 +419,7 @@ let eftermiddagskager = [
     {
         "name": "Lille jordbærtærte",
         "price": 21.00,
-        "imageurl": "images/products/Jordbærtærte.png",
+        "imageurl": "images/products/",
         "orderable": false
     },
     {
@@ -395,7 +431,7 @@ let eftermiddagskager = [
     {
         "name": "Jordbærtærte",
         "price": 75.00,
-        "imageurl": "images/products/Jordbærtærte.png",
+        "imageurl": "images/products/",
         "orderable": false
     },
     {
