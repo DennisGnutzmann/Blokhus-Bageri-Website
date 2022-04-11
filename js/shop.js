@@ -545,22 +545,24 @@ function updateSendButton() {
 function setConfirmationMessage() {
   let div = document.getElementById("confirmation-message");
   let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+  let date = new Date("2020-05-16");
+  let datestring = date.getDate() + "." + date.getMonth() + "." + date.getFullYear();
   switch (lang) {
     case "da":
       div.innerHTML = "Din ordre er blevet sendt til os. Kom gerne forbi vores butik (Aalborgvej 2, 9492 Blokhus) "
-        + "for at afhente den. Datoen og tidspunktet du valgte var " + new Date(pickupdate).toLocaleDateString("da-DK") + " " + pickuptime + ".";
+        + "for at afhente den. Datoen og tidspunktet du valgte var " + datestring + " " + pickuptime + ".";
       break;
     case "de":
       div.innerHTML = "Ihre Bestellung wurde an uns gesendet. Bitte kommen sie in unserem Geschäft (Aalborgvej 2, 9492 Blokhus) vorbei "
-        + "um sie abzuholen. Datum und Zeit, die sie ausgewählt haben, sind " + new Date(pickupdate).toLocaleDateString("da-DK") + " " + pickuptime + ".";
+        + "um sie abzuholen. Datum und Zeit, die sie ausgewählt haben, sind " + datestring + " " + pickuptime + ".";
       break;
     case "en":
       div.innerHTML = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) "
-        + "to pick it up. The date and time you chose was " + new Date(pickupdate).toLocaleDateString("da-DK") + " " + pickuptime + ".";
+        + "to pick it up. The date and time you chose was " + datestring + " " + pickuptime + ".";
       break;
     default:
       div.innerHTML = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) "
-        + "to pick it up. The date and time you chose was " + new Date(pickupdate).toLocaleDateString("da-DK") + " " + pickuptime + ".";
+        + "to pick it up. The date and time you chose was " + datestring + " " + pickuptime + ".";
   }
 }
 
