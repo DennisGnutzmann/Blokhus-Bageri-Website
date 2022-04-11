@@ -136,19 +136,13 @@
 // ---READ DATA---
 
 $name = $_POST["pickupname"];
-
-$date = $_POST["pickupdate"];
-
+$date = date_create($_POST["pickupdate"]);
+$date = date_format($date,"d.m.Y");
 $time = $_POST["pickuptime"];
-
 $paymentmethod = $_POST["paymentmethod"];
-
 $cart = json_decode($_COOKIE["cart"]);
-
 $cartpretty = "";
-
 $price = 0;
-
 // create String for email and calculate total price
 foreach($cart as $jsonDataKey => $jsonDataValue){
     foreach($jsonDataValue as $jsonArrayKey => $jsonArrayValue){
@@ -166,6 +160,7 @@ foreach($cart as $jsonDataKey => $jsonDataValue){
         }
     }
 }
+$price = number_format((float)$price, 2, '.', '');
 
 // ---SENDFILETOPRINTER API USAGE--- DOES NOT WORK
 
@@ -199,9 +194,9 @@ exit();
 
 // ---EMAIL---
 
-$regard = $paymentmethod . " Order: " . $name . " " . $date . " " . $time;
+$regard = $paymentmethod . " bestilling: " . $name . " " . $date . " " . $time;
 
-$message = $name . " sent an order for " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price ." DKK" . "\n\n" . "Payment method: " . $paymentmethod;
+$message = $name . " sendt en ordre til " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price ." DKK" . "\n\n" . "Betaling: " . $paymentmethod;
 
 // use wordwrap() if lines are longer than 70 characters
 $message = wordwrap($message,70);
