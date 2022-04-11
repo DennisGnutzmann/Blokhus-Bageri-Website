@@ -548,19 +548,19 @@ function setConfirmationMessage() {
   switch (lang) {
     case "da":
       div.innerHTML = "Din ordre er blevet sendt til os. Kom gerne forbi vores butik (Aalborgvej 2, 9492 Blokhus) "
-        + "for at afhente den. Datoen og tidspunktet du valgte var " + pickupdate + " " + pickuptime + ".";
+        + "for at afhente den. Datoen og tidspunktet du valgte var " + new Date(pickupdate).toLocaleDateString() + " " + pickuptime + ".";
       break;
     case "de":
       div.innerHTML = "Ihre Bestellung wurde an uns gesendet. Bitte kommen sie in unserem Geschäft (Aalborgvej 2, 9492 Blokhus) vorbei "
-        + "um sie abzuholen. Datum und Zeit, die sie ausgewählt haben, sind " + pickupdate + " " + pickuptime + ".";
+        + "um sie abzuholen. Datum und Zeit, die sie ausgewählt haben, sind " + new Date(pickupdate).toLocaleDateString() + " " + pickuptime + ".";
       break;
     case "en":
       div.innerHTML = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) "
-        + "to pick it up. The date and time you chose was " + pickupdate + " " + pickuptime + ".";
+        + "to pick it up. The date and time you chose was " + new Date(pickupdate).toLocaleDateString() + " " + pickuptime + ".";
       break;
     default:
       div.innerHTML = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) "
-        + "to pick it up. The date and time you chose was " + pickupdate + " " + pickuptime + ".";
+        + "to pick it up. The date and time you chose was " + new Date(pickupdate).toLocaleDateString() + " " + pickuptime + ".";
   }
 }
 
