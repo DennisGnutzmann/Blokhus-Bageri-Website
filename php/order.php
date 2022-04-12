@@ -89,7 +89,7 @@
     var tenantid = "4603270a15e1f09d81ba6cd079d8b48f";
     var apikey = "FYXMAed3MujGuCeLGxwi9FbQipQRxNtP";
     var printersn = "D8J221009390";
-    var url = "https://stage-api.zebra.com/v2/devices/printers/send";
+    var url = "https://api.zebra.com/v2/devices/printers/send";
     //console.log(zplstring);
     var blob = new Blob([zplstring], { type: "text/plain" });
     var file = new File([blob], "order.txt", { type: "text/plain" });
