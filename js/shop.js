@@ -560,8 +560,8 @@ function updateSendButton() {
 function setConfirmationMessage() {
   let div = document.getElementById("confirmation-message");
   let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
-  let date = new Date("2020-05-16");
-  let datestring = date.getDate() + "." + date.getMonth() + "." + date.getFullYear();
+  let date = new Date(pickupdate);
+  let datestring = date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear();
   switch (lang) {
     case "da":
       div.innerHTML = "Din ordre er blevet sendt til os. Kom gerne forbi vores butik (Aalborgvej 2, 9492 Blokhus) "
