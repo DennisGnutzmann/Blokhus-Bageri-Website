@@ -32,7 +32,7 @@ let rundstykke = [
     {
         "name": "Søstjerne",
         "price": 6.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Søstjerne.png",
         "orderable": true
     },
     {
@@ -78,6 +78,18 @@ let rundstykke = [
         "orderable": true
     },
     {
+        "name": "Horn",
+        "price": 8.50,
+        "imageurl": "images/products/Horn.png",
+        "orderable": true
+    },
+    {
+        "name": "Gifler",
+        "price": 8.50,
+        "imageurl": "images/products/Gifler.png",
+        "orderable": true
+    },
+    {
         "name": "Gulerødsboller",
         "price": 9.00,
         "imageurl": "images/products/Gulerødsboller.png",
@@ -93,6 +105,24 @@ let rundstykke = [
         "name": "Krydde",
         "price": 6.50,
         "imageurl": "images/products/Krydde.JPG",
+        "orderable": true
+    },
+    {
+        "name": "Majsstyk",
+        "price": 8.50,
+        "imageurl": "images/products/",
+        "orderable": true
+    },
+    {
+        "name": "Valnøddestyk",
+        "price": 8.50,
+        "imageurl": "images/products/",
+        "orderable": true
+    },
+    {
+        "name": "Femkornstyk",
+        "price": 8.50,
+        "imageurl": "images/products/",
         "orderable": true
     },
     {
@@ -278,7 +308,13 @@ let morgenkager = [
     {
         "name": "Dagmartærte",
         "price": 40.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Dagmartærte.png",
+        "orderable": true
+    },
+    {
+        "name": "Wienerbrødstang",
+        "price": 40.00,
+        "imageurl": "images/products/Wienerbrødstang.png",
         "orderable": true
     },
     {
@@ -300,9 +336,9 @@ let morgenkager = [
         "orderable": true
     },
     {
-        "name": "Brunsvigerstang",
+        "name": "Stor brunsviger",
         "price": 48.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Stor brunsviger.JPG",
         "orderable": true
     },
     {
@@ -333,15 +369,27 @@ let eftermiddagskager = [
         "orderable": false
     },
     {
+        "name": "Donut",
+        "price": 12.00,
+        "imageurl": "images/products/Donut.png",
+        "orderable": false
+    },
+    {
+        "name": "Studenterbrød",
+        "price": 17.00,
+        "imageurl": "images/products/Studenterbrød.png",
+        "orderable": false
+    },
+    {
         "name": "Træstamme",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Træstamme.png",
         "orderable": false
     },
     {
         "name": "Napoleonshat",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Napoleonshat.png",
         "orderable": false
     },
     {
@@ -359,13 +407,13 @@ let eftermiddagskager = [
     {
         "name": "Nøddehorn",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Nøddehorn.png",
         "orderable": false
     },
     {
         "name": "Hindbærsnitte",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Hindbærsnitte.png",
         "orderable": false
     },
     {
@@ -377,31 +425,55 @@ let eftermiddagskager = [
     {
         "name": "Nougatsnitte",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Nougatsnitte.png",
         "orderable": false
     },
     {
         "name": "Mazarin-/Toscasnitte",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Toscasnitte.png",
+        "orderable": false
+    },
+    {
+        "name": "Blokhusguf",
+        "price": 17.00,
+        "imageurl": "images/products/Blokhusguf.png",
         "orderable": false
     },
     {
         "name": "Makronsnitte",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Makronsnitte.png",
         "orderable": false
     },
     {
         "name": "Æblesnitte",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Æblesnitte.png",
         "orderable": false
     },
     {
         "name": "Sveskesnitte",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Sveskesnitte.png",
+        "orderable": false
+    },
+    {
+        "name": "Fransk vaffel",
+        "price": 17.00,
+        "imageurl": "images/products/Fransk vaffel.png",
+        "orderable": false
+    },
+    {
+        "name": "Øretæve",
+        "price": 17.00,
+        "imageurl": "images/products/Øretæve.JPG",
+        "orderable": false
+    },
+    {
+        "name": "Chokolademarengs",
+        "price": 17.00,
+        "imageurl": "images/products/Chokolademarengs.png",
         "orderable": false
     },
     {
@@ -413,13 +485,19 @@ let eftermiddagskager = [
     {
         "name": "Mozartkage",
         "price": 21.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Mozartkage.png",
+        "orderable": false
+    },
+    {
+        "name": "Kransekagehorn",
+        "price": 21.00,
+        "imageurl": "images/products/Kransekagehorn.png",
         "orderable": false
     },
     {
         "name": "Lille jordbærtærte",
         "price": 21.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Lille jordbærstærte.png",
         "orderable": false
     },
     {
@@ -431,29 +509,28 @@ let eftermiddagskager = [
     {
         "name": "Jordbærtærte",
         "price": 75.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Jordbærstærte.png",
         "orderable": false
     },
     {
         "name": "Jordbærstang",
         "price": 80.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Jordbærstang.png",
         "orderable": false
-    },
-
+    }
 ]
 
 let diverse = [
     {
         "name": "Kylling-bacon sandwich",
         "price": 38.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Sandwich.JPG",
         "orderable": false
     },
     {
         "name": "Pølsehorn",
         "price": 18.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Pølsehorn.png",
         "orderable": false
     },
     {
