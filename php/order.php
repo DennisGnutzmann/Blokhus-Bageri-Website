@@ -27,7 +27,7 @@
                 paymentmethod = keyValArr[1];
             }
             if (keyValArr[0] === "lang") {
-            lang = keyValArr[1];
+                lang = keyValArr[1];
             }
         }
     }
@@ -102,12 +102,25 @@
     http.setRequestHeader("apikey", apikey); // Add API key to the header
     http.setRequestHeader("tenant", tenantid); // Add tenant ID
 
-    /* http.onreadystatechange = () => { // Call a function when the state changes.
-      // if((http.readyState == 4 || http.readyState == 1) && (http.status == 200 || http.status == 500) ) {
-      if ((http.readyState == 4 || http.readyState == 1)) {
-        alert(http.responseText);
-      }
-    } */
+    http.onreadystatechange = () => { // Call a function when the state changes.
+        // if((http.readyState == 4 || http.readyState == 1) && (http.status == 200 || http.status == 500) ) {
+        if ((http.readyState == 4 || http.readyState == 1)) {
+            //console.log(http.responseText);
+            switch (lang) {
+                case "da":
+                    window.location.replace("../DK-ordrebekræftelse.html");
+                    break;
+                case "de":
+                    window.location.replace("../DE-bestellbestätigung.html");
+                    break;
+                case "en":
+                    window.location.replace("../EN-orderconfirmation.html");
+                    break;
+                default:
+                    window.location.replace("../EN-orderconfirmation.html");
+            }
+        }
+    }
 
     fd = new FormData();
     fd.append("zpl_file", file); // Attach the file to be sent.
@@ -116,24 +129,12 @@
     fd.append("sn", printersn);
 
     http.send(fd);
-
-    switch (lang) {
-    case "da":
-      window.location.replace("../DK-ordrebekræftelse.html");
-      break;
-    case "de":
-      window.location.replace("../DE-bestellbestätigung.html");
-      break;
-    case "en":
-      window.location.replace("../EN-orderconfirmation.html");
-      break;
-    default:
-      window.location.replace("../EN-orderconfirmation.html");
-  }
 </script>
 
 <?php
 // ---READ DATA---
+
+echo "Sending your order, please be patient...";
 
 $name = $_POST["pickupname"];
 $date = date_create($_POST["pickupdate"]);
