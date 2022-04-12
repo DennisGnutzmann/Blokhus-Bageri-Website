@@ -35,6 +35,21 @@ function generateTable(array, name) {
     let imagecell = row.insertCell(0);
     if (array[i - 1].imageurl!=="images/products/") {
       imagecell.innerHTML='<a href="'+array[i - 1].imageurl+'" target="_blank"><img src="'+array[i - 1].imageurl+'"></a>';
+    } else {
+      let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+  switch (lang) {
+    case "da":
+      imagecell.innerHTML = 'Billedet kommer snart.';
+      break;
+    case "de":
+      imagecell.innerHTML = 'Das Bild folgt bald.';
+      break;
+    case "en":
+      imagecell.innerHTML = 'The picture is coming soon.';
+      break;
+    default:
+      imagecell.innerHTML = 'The picture is coming soon.';
+  }
     }
 
     //Add and fill td for name
