@@ -223,8 +223,8 @@ main h2 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 100px;
 }
 
 /* #sortiment td:first-child img:hover {
@@ -534,10 +534,11 @@ footer a {
 
 @media screen and (max-width: 450px) {
     #sortiment table tr th:nth-of-type(1) {
-        display: none;
+        max-width: 100px;
     }
-    #sortiment table tr td:nth-of-type(1) {
-        display: none;
+    #sortiment table tr td:nth-of-type(1) img {
+        max-width: 100px;
+        object-fit: fill;
     }
 }
 
@@ -546,6 +547,12 @@ footer a {
         display: none;
     }
     #cart table tr td:nth-of-type(2) {
+        display: none;
+    }
+    #sortiment table tr th:nth-of-type(1) {
+        display: none;
+    }
+    #sortiment table tr td:nth-of-type(1) {
         display: none;
     }
     #sortiment table tr th:nth-of-type(3) {
