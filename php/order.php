@@ -40,6 +40,9 @@
         return total;
     }
 
+    let date = new Date(pickupdate);
+    let datestring = date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear();
+
     var zplstring = "";
     //zplstring = "^XA^FO50,50^ADN,36,20^FDHello World!^FS^XZ";
 
@@ -58,7 +61,7 @@
         "^FT367,1241^A0I,28,28^FB202,1,0,C^FH\^FD+45 98 24 85 20^FS\n" +
         "^FO31,1226^GB452,0,8^FS\n" +
         "^FT483,1180^A0I,39,38^FH\^FD" + pickupname + "^FS\n" +
-        "^FT483,1132^A0I,39,38^FH\^FDDato: " + new Date(pickupdate).toLocaleDateString() + "     Tid: " + pickuptime + "^FS\n" +
+        "^FT483,1132^A0I,39,38^FH\^FDDato: " + datestring + "     Tid: " + pickuptime + "^FS\n" +
         "^FT483,1084^A0I,39,38^FH\^FDBetaling: " + paymentmethod + "^FS\n" +
         "^FO31,1066^GB452,0,8^FS\n";
     // Label-Body
