@@ -4,7 +4,7 @@ let pickupdate = "";
 let pickuptime = "";
 let paymentmethod = "";
 let lang = "";
-let openinghours = "6:00-17:30";
+let openinghours = "6:00-18:00";
 
 function setOpeningHours() {
   let div = document.getElementById("openinghours");
@@ -34,7 +34,7 @@ function generateTable(array, name) {
     //Add and fill td for image
     let imagecell = row.insertCell(0);
     if (array[i - 1].imageurl!=="images/products/") {
-      imagecell.innerHTML='<a href="'+array[i - 1].imageurl+'" target="_blank"><img src="'+array[i - 1].imageurl+'"></a>';
+      imagecell.innerHTML='<a href="'+array[i - 1].imageurl+'.jpg" target="_blank"><img src="'+array[i - 1].imageurl+' optimized.jpg"></a>';
     } else {
       let lang = document.getElementsByTagName('html')[0].getAttribute('lang');
   switch (lang) {
