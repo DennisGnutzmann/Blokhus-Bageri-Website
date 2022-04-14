@@ -137,6 +137,22 @@ main h2 {
     margin: 10px auto;
 }
 
+h1 {
+    text-align: center;
+}
+
+main h1 {
+    box-sizing: border-box;
+    border: var(--font);
+    border-width: 10px;
+    border-style: ridge;
+    background-color: var(--background);
+    color: var(--font);
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 10px auto;
+}
+
 .contacts-with-icon {
     box-sizing: border-box;
     border: var(--font);
