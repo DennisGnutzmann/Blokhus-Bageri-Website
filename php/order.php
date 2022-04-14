@@ -139,22 +139,22 @@
 
 echo "Sending your order, please be patient...";
 
-$name = $_POST["pickupname"];
-$date = date_create($_POST["pickupdate"]);
-$date = date_format($date,"d.m.Y");
-$time = $_POST["pickuptime"];
+$name          = $_POST["pickupname"];
+$date          = date_create($_POST["pickupdate"]);
+$date          = date_format($date, "d.m.Y");
+$time          = $_POST["pickuptime"];
 $paymentmethod = $_POST["paymentmethod"];
-$cart = json_decode($_COOKIE["cart"]);
-$cartpretty = "";
-$price = 0;
+$cart          = json_decode($_COOKIE["cart"]);
+$cartpretty    = "";
+$price         = 0;
 // create String for email and calculate total price
-foreach($cart as $jsonDataKey => $jsonDataValue){
-    foreach($jsonDataValue as $jsonArrayKey => $jsonArrayValue){
+foreach ($cart as $jsonDataKey => $jsonDataValue) {
+    foreach ($jsonDataValue as $jsonArrayKey => $jsonArrayValue) {
         if ($jsonArrayKey == "name") {
-            $cartpretty.= $jsonArrayValue . " ";
+            $cartpretty .= $jsonArrayValue . " ";
         }
         if ($jsonArrayKey == "price") {
-            $cartpretty.= $jsonArrayValue . " DKK * ";
+            $cartpretty .= $jsonArrayValue . " DKK * ";
         }
         if ($jsonArrayKey == "amount") {
             $cartpretty .= $jsonArrayValue . "\n";
@@ -164,7 +164,7 @@ foreach($cart as $jsonDataKey => $jsonDataValue){
         }
     }
 }
-$price = number_format((float)$price, 2, '.', '');
+$price = number_format((float) $price, 2, '.', '');
 
 // ---SENDFILETOPRINTER API USAGE--- DOES NOT WORK
 
@@ -196,32 +196,68 @@ curl_close($curl);
 exit();
 */
 
-// ---EMAIL---
+// ---EMAIL to Shop---
 
 $regard = $paymentmethod . " bestilling: " . $name . " " . $date . " " . $time;
 
-$message = $name . " sendt en ordre til " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price ." DKK" . "\n\n" . "Betaling: " . $paymentmethod;
+$message = $name . " sendt en ordre til " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price . " DKK" . "\n\n" . "Betaling: " . $paymentmethod;
 
 // use wordwrap() if lines are longer than 70 characters
-$message = wordwrap($message,70);
+$message = wordwrap($message, 70);
 
 $header = "From: BlokhusBageri" . "\r\n";
 $header .= 'Content-type: text/plain; charset=UTF-8' . "\r\n";
 
 // send email
-mail("BlokhusBageriOrders@outlook.com",$regard,$message,$header);
+mail("BlokhusBageriOrders@outlook.com", $regard, $message, $header);
+
+// ---EMAIL to Customer
+
+$to = $_POST["email"];
+
+if (!empty($to)) {
+    
+    $lang = json_decode($_COOKIE["lang"]);
+    
+    switch ($lang) {
+        case "da":
+            $regard  = "Ordrebekræftelse: " . $name . " " . $date . " " . $time;
+            $message = "Din ordre er blevet sendt til os. Kom gerne forbi vores butik (Aalborgvej 2, 9492 Blokhus) " . "for at afhente den. Datoen og tidspunktet du valgte var " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price . " DKK" . "\n\n" . "Betaling: " . $paymentmethod;
+            $message = wordwrap($message, 70);
+            break;
+        
+        case "de":
+            $regard  = "Bestellbestätigung: " . $name . " " . $date . " " . $time;
+            $message = "Ihre Bestellung wurde an uns gesendet. Bitte kommen sie in unserem Geschäft (Aalborgvej 2, 9492 Blokhus) vorbei " . "um sie abzuholen. Datum und Zeit, die sie ausgewählt haben, sind " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Gesamt: " . $price . " DKK" . "\n\n" . "Zahlungsart: " . $paymentmethod;
+            $message = wordwrap($message, 70);
+            break;
+        
+        case "en":
+            $regard  = "Order-confirmation: " . $name . " " . $date . " " . $time;
+            $message = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) " . "to pick it up. The date and time you chose was " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price . " DKK" . "\n\n" . "Payment method: " . $paymentmethod;
+            $message = wordwrap($message, 70);
+            break;
+        
+        default:
+            $regard  = "Order-confirmation: " . $name . " " . $date . " " . $time;
+            $message = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) " . "to pick it up. The date and time you chose was " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price . " DKK" . "\n\n" . "Payment method: " . $paymentmethod;
+            $message = wordwrap($message, 70);
+    }
+    // send email
+    mail($to, $regard, $message, $header);
+}
 
 // ---REDIRECT TO CHECKOUT--- Is now handled by Javascript
 
 /* $lang = $_COOKIE["lang"];
 if (strcmp($lang, "de") == 0) {
-    header("Location: ../DE-bestellbestätigung.html");
-    exit();
+header("Location: ../DE-bestellbestätigung.html");
+exit();
 } else if (strcmp($lang, "da") == 0) {
-    header("Location: ../DK-ordrebekræftelse.html");
-    exit();
+header("Location: ../DK-ordrebekræftelse.html");
+exit();
 } else {
-    header("Location: ../EN-orderconfirmation.html");
-    exit();
+header("Location: ../EN-orderconfirmation.html");
+exit();
 } */
 ?>
