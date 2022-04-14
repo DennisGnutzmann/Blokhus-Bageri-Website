@@ -634,5 +634,7 @@ function updateAcceptCookieBox() {
   if (cookiesaccepted) {
     let box = document.getElementById("cookieacceptbox");
     box.style.display="none";
+    let warning = document.getElementById("activatecookiesinfo");
+    warning.style.display="none";
   }
 }
