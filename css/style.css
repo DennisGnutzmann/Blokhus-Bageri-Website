@@ -181,6 +181,7 @@ main h2 {
     background-color: var(--font);
     padding: 5px;
     line-height: 25px;
+    box-sizing: border-box;
 }
 
 #sortiment {
@@ -477,6 +478,13 @@ footer a {
     background-color: white;
 }
 
+#activatecookiesinfo {
+    background-color: var(--font);
+    box-sizing: border-box;
+    border: red;
+    border-width: 5px;
+    border-style: solid;
+}
 
 @media screen and (max-width: 1800px) {
     #cart {
