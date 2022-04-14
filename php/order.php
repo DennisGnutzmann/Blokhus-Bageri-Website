@@ -203,7 +203,7 @@ $regard = $paymentmethod . " bestilling: " . $name . " " . $date . " " . $time;
 $message = $name . " sendt en ordre til " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price . " DKK" . "\n\n" . "Betaling: " . $paymentmethod;
 
 // use wordwrap() if lines are longer than 70 characters
-$message = wordwrap($message, 70);
+$message = wordwrap($message, 100);
 
 $header = "From: BlokhusBageri" . "\r\n";
 $header .= 'Content-type: text/plain; charset=UTF-8' . "\r\n";
@@ -217,31 +217,31 @@ $to = $_POST["email"];
 
 if (!empty($to)) {
     
-    $lang = json_decode($_COOKIE["lang"]);
+    $lang = $_COOKIE["lang"];
     
     switch ($lang) {
         case "da":
             $regard  = "Ordrebekræftelse: " . $name . " " . $date . " " . $time;
             $message = "Din ordre er blevet sendt til os. Kom gerne forbi vores butik (Aalborgvej 2, 9492 Blokhus) " . "for at afhente den. Datoen og tidspunktet du valgte var " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price . " DKK" . "\n\n" . "Betaling: " . $paymentmethod;
-            $message = wordwrap($message, 70);
+            $message = wordwrap($message, 100);
             break;
         
         case "de":
             $regard  = "Bestellbestätigung: " . $name . " " . $date . " " . $time;
             $message = "Ihre Bestellung wurde an uns gesendet. Bitte kommen sie in unserem Geschäft (Aalborgvej 2, 9492 Blokhus) vorbei " . "um sie abzuholen. Datum und Zeit, die sie ausgewählt haben, sind " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Gesamt: " . $price . " DKK" . "\n\n" . "Zahlungsart: " . $paymentmethod;
-            $message = wordwrap($message, 70);
+            $message = wordwrap($message, 100);
             break;
         
         case "en":
             $regard  = "Order-confirmation: " . $name . " " . $date . " " . $time;
             $message = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) " . "to pick it up. The date and time you chose was " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price . " DKK" . "\n\n" . "Payment method: " . $paymentmethod;
-            $message = wordwrap($message, 70);
+            $message = wordwrap($message, 100);
             break;
         
         default:
             $regard  = "Order-confirmation: " . $name . " " . $date . " " . $time;
             $message = "Your order has been sent to us. Please come by our shop (Aalborgvej 2, 9492 Blokhus) " . "to pick it up. The date and time you chose was " . $date . " " . $time . ":\n\n" . $cartpretty . "\n" . "Total: " . $price . " DKK" . "\n\n" . "Payment method: " . $paymentmethod;
-            $message = wordwrap($message, 70);
+            $message = wordwrap($message, 100);
     }
     // send email
     mail($to, $regard, $message, $header);
