@@ -5,6 +5,7 @@ let pickuptime = "";
 let paymentmethod = "";
 let lang = "";
 let openinghours = "6:00-18:00";
+let cookiesaccepted = false;
 
 function setOpeningHours() {
   let div = document.getElementById("openinghours");
@@ -128,6 +129,9 @@ function getTotalItems() {
 }
 
 function addProduct(name, price, amount) {
+  if (!cookiesaccepted) {
+    return;
+  }
   let product = new Product(name, price, amount);
   let entry = cart.find(element => element.name == name);
   //Add to cart if product type is not yet in the cart
@@ -220,6 +224,7 @@ function init() {
   setOpeningHours()
   getCookie();
   refreshCartAmount();
+  updateAcceptCookieBox();
 }
 
 function initOrders() {
@@ -227,6 +232,7 @@ function initOrders() {
   generateTables();
   getCookie();
   refreshCart(true);
+  updateAcceptCookieBox();
 }
 
 function initProducts() {
@@ -234,6 +240,7 @@ function initProducts() {
   generateTables();
   getCookie();
   refreshCartAmount();
+  updateAcceptCookieBox();
 }
 
 function initCheckout() {
@@ -244,6 +251,7 @@ function initCheckout() {
   getFormCookies();
   setAcceptableInput();
   updateSendButton();
+  updateAcceptCookieBox();
 }
 
 function initConfirmation() {
@@ -254,6 +262,7 @@ function initConfirmation() {
   setMobilePayMessage();
   deleteAllCookieInformation();
   refreshCartAmount();
+  updateAcceptCookieBox();
 }
 
 function deleteAllCookieInformation() {
@@ -296,11 +305,14 @@ function setLanguageCookie() {
 }
 
 function setFormCookies(form) {
+  if (!cookiesaccepted) {
+    return;
+  }
   setNameCookie(form.pickupname.value);
   setDateCookie(form.pickupdate.value);
   setTimeCookie(form.pickuptime.value);
-  setPaymentMethodCookie(form.paymentmethod.value)
-  updateSendButton()
+  setPaymentMethodCookie(form.paymentmethod.value);
+  updateSendButton();
 }
 
 function getFormCookies() {
@@ -339,6 +351,9 @@ function getCookie() {
       }
       if (keyValArr[0] === "lang") {
         lang = keyValArr[1];
+      }
+      if (keyValArr[0] === "cookiesaccepted") {
+        cookiesaccepted = keyValArr[1];
       }
     }
   }
@@ -544,7 +559,7 @@ function updateSendButton() {
   }
   switch (lang) {
     case "da":
-      document.getElementById("submit-button").value = 'Sende ordre!';
+      document.getElementById("submit-button").value = 'Send ordre!';
       break;
     case "de":
       document.getElementById("submit-button").value = 'Bestellung absenden!';
@@ -606,5 +621,18 @@ function setMobilePayMessage() {
     }
   } else {
     div.innerHTML = '';
+  }
+}
+
+function setAcceptCookie() {
+  document.cookie = "cookiesaccepted=true; expires=Tue, 19 Jan 2038 04:14:07 GMT";
+  cookiesaccepted = true;
+  updateAcceptCookieBox();
+}
+
+function updateAcceptCookieBox() {
+  if (cookiesaccepted) {
+    let box = document.getElementById("cookieacceptbox");
+    box.style.display="none";
   }
 }

@@ -58,10 +58,11 @@
         <main>
             <h1>Unsere Produkte</h1>
             <section id="sortiment">
-                <div id="activatecookiesinfo">Wichtig: Damit Bestellungen funktionieren, müssen Cookies in ihrem Browser
-                    aktiviert sein. Ansonsten wird der Einkaufswagen beispielsweise nicht gespeichert. Genauere Infos 
+                <!--<div id="activatecookiesinfo">Wichtig: Damit Bestellungen funktionieren, müssen Cookies in ihrem Browser
+                    global aktiviert sein, dies ist nicht automatisch der Fall, wenn sie den Cookies auf unserer Seite zustimmen. 
+                    Ansonsten wird der Einkaufswagen beispielsweise nicht gespeichert. Genauere Infos 
                     zu Cookies auf dieser Webseite finden sie <a href="DE-bedingungen.html">hier</a>.
-                </div>
+                </div>-->
                 <div class="textbox">
                     Hinweis: Unser Sortiment ändert sich oft und es sind nicht alle saisonalen Produkte aufgeführt.
                     Geburtstagskuchen und andere Kuchen in größeren Mengen können per Telefon oder direkt 
@@ -111,6 +112,11 @@
                 </table>
             </section>
         </main>
+        <div id="cookieacceptbox">
+            <span>Diese Seite erstellt und nutzt Cookies, die für die Funktionalität der Website notwendig sind. Genauere Information finden sie <a href="DE-bedingungen.html">hier</a>.<br>
+                Diese Cookies entstehen nur, falls sie auf "Zustimmen" drücken. Ansonsten funktioniert das Bestellsystem NICHT.
+        </span>
+        <button onclick="setAcceptCookie()">Zustimmen</button></div>
         <footer>
             <div id="openinghours"></div>
             <div>

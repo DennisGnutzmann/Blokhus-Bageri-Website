@@ -452,7 +452,7 @@ footer a {
     text-decoration: underline;
 }
 
-#orderinfo input[type=text],input[type=date],input[type=time] {
+#orderinfo input[type=text],input[type=date],input[type=time],input[type=email] {
     display: block;
     width: 220px;
 }
@@ -500,6 +500,23 @@ footer a {
     border: red;
     border-width: 5px;
     border-style: solid;
+}
+
+#cookieacceptbox {
+    position: sticky;
+    bottom:0;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    font-size: large;
+    z-index: 10;
+}
+
+#cookieacceptbox button {
+    font-size: larger;
 }
 
 @media screen and (max-width: 1800px) {
