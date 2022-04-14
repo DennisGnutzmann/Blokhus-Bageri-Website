@@ -517,6 +517,7 @@ footer a {
 
 #cookieacceptbox button {
     font-size: larger;
+    margin-right: 15px;
 }
 
 @media screen and (max-width: 1800px) {
