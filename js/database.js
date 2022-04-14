@@ -54,7 +54,7 @@ let rundstykke = [
         "orderable": true
     },
     {
-        "name": "Grøv italiensk rundstyk",
+        "name": "Grov italiensk rundstyk",
         "price": 8.50,
         "imageurl": "images/products/Grøv italiensk rundstyk",
         "orderable": true
@@ -66,7 +66,7 @@ let rundstykke = [
         "orderable": true
     },
     {
-        "name": "Grøv birkes",
+        "name": "Grov birkes",
         "price": 8.50,
         "imageurl": "images/products/Grøv birkes",
         "orderable": true
@@ -90,19 +90,19 @@ let rundstykke = [
         "orderable": true
     },
     {
-        "name": "Gulerødsboller",
+        "name": "Gulerodsboller",
         "price": 9.00,
-        "imageurl": "images/products/Gulerødsboller",
+        "imageurl": "images/products/Gulerodsboller",
         "orderable": true
     },
     {
-        "name": "Tilbud: 5 Gulerødsboller",
+        "name": "Tilbud: 5 Gulerodsboller",
         "price": 33.00,
-        "imageurl": "images/products/Gulerødsboller",
+        "imageurl": "images/products/Gulerodsboller",
         "orderable": true
     },
     {
-        "name": "Krydde",
+        "name": "Krydder",
         "price": 6.50,
         "imageurl": "images/products/Krydde",
         "orderable": true
@@ -120,7 +120,7 @@ let rundstykke = [
         "orderable": true
     },
     {
-        "name": "Femkornstyk",
+        "name": "Femkornsstyk",
         "price": 8.50,
         "imageurl": "images/products/",
         "orderable": true
@@ -201,7 +201,7 @@ let broed = [
         "orderable": true
     },
     {
-        "name": "Blokhus Grovbbrød",
+        "name": "Blokhus Grovbrød",
         "price": 30.00,
         "imageurl": "images/products/Blokhus Grovbbrød",
         "orderable": true
@@ -231,7 +231,7 @@ let broed = [
         "orderable": true
     },
     {
-        "name": "Grøv italiensk brød",
+        "name": "Grov italiensk brød",
         "price": 35.00,
         "imageurl": "images/products/Grøv italiensk brød",
         "orderable": true
@@ -313,7 +313,7 @@ let morgenkager = [
     },
     {
         "name": "Wienerbrødstang",
-        "price": 40.00,
+        "price": 48.00,
         "imageurl": "images/products/Wienerbrødstang",
         "orderable": true
     },
