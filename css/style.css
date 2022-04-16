@@ -520,6 +520,28 @@ footer a {
     margin-right: 15px;
 }
 
+.loader {
+    border: 16px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    border-top: 16px solid rgb(214,186,147);
+    margin:auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 @media screen and (max-width: 1800px) {
     #cart {
         top: 0;

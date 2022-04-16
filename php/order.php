@@ -1,8 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<main>
+    <div class="loader"></div>
+    <h2>Sending your order, please be patient...</h2>
+</main>
+
 <?php
 // ---READ DATA---
 
 if ((!isset($_POST["pickupname"])) || (!isset($_POST["pickupdate"])) || (!isset($_POST["pickuptime"])) || (!isset($_POST["paymentmethod"]))) {
-    exit("Please do not access this site directly through URL.");
+    exit();
 }
 
 $name          = $_POST["pickupname"];
@@ -15,10 +26,8 @@ $cartpretty    = "";
 $price         = 0;
 
 if (empty($cart)) {
-    exit("Please do not access this site directly through URL.");
+    exit();
 }
-
-echo "Sending your order, please be patient...";
 
 // create String for email and calculate total price
 foreach ($cart as $jsonDataKey => $jsonDataValue) {
@@ -242,3 +251,6 @@ if (cart.length != 0) {
 }
 </script>'
 ?>
+
+</body>
+</html>
