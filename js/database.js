@@ -110,19 +110,19 @@ let rundstykke = [
     {
         "name": "Majsstyk",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Majsstyk",
         "orderable": true
     },
     {
         "name": "Valnøddestyk",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Valnøddestyk",
         "orderable": true
     },
     {
         "name": "Femkornsstyk",
         "price": 8.50,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Femkornsstyk",
         "orderable": true
     },
     {
@@ -419,7 +419,7 @@ let eftermiddagskager = [
     {
         "name": "Nürenbergsnitte",
         "price": 17.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Nürenbergsnitte",
         "orderable": false
     },
     {
@@ -536,13 +536,13 @@ let diverse = [
     {
         "name": "Lille Wienerbrødkagemand (til 8 personer)",
         "price": 175.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Wienerbrødkagemand",
         "orderable": false
     },
     {
         "name": "Wienerbrødkagemand (til 15 personer)",
         "price": 200.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Wienerbrødkagemand",
         "orderable": false
     },
     {
@@ -560,7 +560,7 @@ let diverse = [
     {
         "name": "Hindbærkagemand (til 15 personer)",
         "price": 200.00,
-        "imageurl": "images/products/",
+        "imageurl": "images/products/Hindbærkagemand",
         "orderable": false
     }
 ]
