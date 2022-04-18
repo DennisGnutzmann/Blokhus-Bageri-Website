@@ -81,13 +81,13 @@ let rundstykke = [
         "name": "Horn",
         "price": 8.50,
         "imageurl": "images/products/Horn",
-        "orderable": true
+        "orderable": false
     },
     {
         "name": "Gifler",
         "price": 8.50,
         "imageurl": "images/products/Gifler",
-        "orderable": true
+        "orderable": false
     },
     {
         "name": "Gulerodsboller",
@@ -105,25 +105,25 @@ let rundstykke = [
         "name": "Krydder",
         "price": 6.50,
         "imageurl": "images/products/Krydde",
-        "orderable": true
+        "orderable": false
     },
     {
         "name": "Majsstyk",
         "price": 8.50,
         "imageurl": "images/products/Majsstyk",
-        "orderable": true
+        "orderable": false
     },
     {
         "name": "Valnøddestyk",
         "price": 8.50,
         "imageurl": "images/products/Valnøddestyk",
-        "orderable": true
+        "orderable": false
     },
     {
         "name": "Femkornsstyk",
         "price": 8.50,
         "imageurl": "images/products/Femkornsstyk",
-        "orderable": true
+        "orderable": false
     },
     {
         "name": "Teboller",
